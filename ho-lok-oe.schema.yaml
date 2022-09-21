@@ -1,0 +1,286 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: ho-lok-oe
+  name: 河洛話注音
+  version: "0.1"
+  author: 
+    - 居正中 AlanJui <alanjui.1960@gmail.com>
+  description: 以《彙集雅俗通十五音》為基礎的「河洛話」注音工具
+  dependencies: 
+    # - moetaigi.unspaced
+    #   - luna_pinyin
+    #   - moetaigi-test
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半形, 全形 ]
+  # - name: ascii_punct
+  #   states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    # - fluency_editor
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - affix_segmentor@learning
+    - affix_segmentor@zhuyin
+    # - affix_segmentor@pinyin
+    - punct_segmentor
+    - fallback_segmentor
+    # - affix_segmentor@custom_reverse_lookup
+  translators:
+    # - echo_translator
+    - punct_translator
+    - script_translator
+    # - r10n_translator    # aka script_translator
+    # - reverse_lookup_translator
+    - script_translator@learning
+    # - table_translator@bopomo_onion_phrase
+    - script_translator@zhuyin
+  filters:
+    - simplifier
+    - uniquifier
+    - reverse_lookup_filter@tsuim_reverse_lookup
+    # - reverse_lookup_filter@bpm_reverse_lookup
+
+# menu:
+#   alternative_select_keys: "!@#$%^&"
+
+speller:
+  alphabet: '1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657'
+  initials: '1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ43btgz657'
+  finals: " 43657"
+  delimiter: "'"
+  use_space: true
+  algebra:
+    __patch:
+      - tsuim:/pinyin_to_tsuim
+      - tsuim:/abbreviation
+      - tsuim:/keymap_bopomofo
+
+translator:
+  dictionary: moetaigi
+  prism: tsuim
+  spelling_hints: 0
+  # enable_sentence: true
+  preedit_format:
+    - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆻㆷˊ˫˙|"
+  # comment_format:
+  #   __patch:
+  #     - tsuim:/pinyin_to_tsuim
+  #     - tsuim:/keymap_bopomofo
+  #     - tsuim:/bopomofo_symbols
+
+learning:
+  tag: learning
+  dictionary: moetaigi
+  prism: tsuim
+  tips: 《注音顯示》
+  spelling_hints: 6    # 注音學習模式
+  prefix: "'"
+  preedit_format:
+    - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆻㆷˊ˫˙|"
+    - xform/^/《注音顯示》/
+  comment_format:
+    __patch:
+      - tsuim:/pinyin_to_tsuim
+      - tsuim:/keymap_bopomofo
+      - tsuim:/bopomofo_symbols
+
+zhuyin:
+  tag: zhuyin
+  dictionary: terra_pinyin # luna_pinyin
+  prism: bopomofo_tw
+  prefix: "`"
+# 漢語拼音輸入以〔大寫〕「P」引導
+  # suffix: ;
+  spelling_hints: 6    # 注音學習模式
+  preedit_format: # &pinyin
+    - "xlit|1qaz2wsxedcrfv5tgbyhnujm8ik,9ol.0p;/- 6347'|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˉˊˇˋ˙ |"
+    - xform/^/《中文反查》/
+    # - xform/([nl])v/$1ü/
+    # - xform/([nl])ue/$1üe/
+    # - xform/([jqxy])v/$1u/
+  tips: 《中文反查》
+  # closing_tips: 【蒼頡】
+  # initial_quality: 0.2  # 調整該編譯器出字優先度
+
+tsuim_reverse_lookup:
+  tags: [ zhuyin ]
+  overwrite_comment: true
+  dictionary: moetaigi.unspaced
+  comment_format:
+    __patch:
+      - tsuim:/pinyin_to_tsuim
+      - tsuim:/keymap_bopomofo
+      - tsuim:/bopomofo_symbols
+
+
+# custom_reverse_lookup:
+#   tag: custom_reverse_lookup
+#   dictionary: cangjie5 # luna_pinyin # cangjie5
+#   enable_completion: false
+#   enable_sentence: false
+#   enable_user_dict: true
+#   # prefix: "`"
+#   prefix: "="
+#   suffix: " "
+#   tips: "《喔喔4》"
+#   preedit_format:
+#   #   - xform/([nljqxy])v/$1ü/
+#    - "xlit|abcdefghijklmnopqrstuvwxyz|ABCDEFGHIJKLMNOPQRSTUVWXYZ|"
+#    - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
+#    - xform/^/《反查》/
+#    - 'xform/\\/ /'
+
+# reverse_lookup:
+#   dictionary: moetaigi # luna_pinyin # moetaigi-tsuim-index #  # 新增了字典檔 可能用不上
+#   prefix: "`"
+#   tips: 〔學習模式〕
+#   preedit_format:
+#     - "xlit|1!qa2wsxeEdDcrRfvyYhn8*iIkoO9(lL,<m0p;:/-uUjJ 43btgz657|ㄅㆠㄆㄇㄉㄊㄋㄌㄍㆣㄎㄫㄏㄐㆢㄑㄒㄗㆡㄘㄙㄚㆩㆦㆧㄜㆤㆥㄞㆮㄠㆯㆰㆱㆬㄢㄣㄤㆲㄥㆭㄧㆪㄨㆫ ˋ˪ㆴㆵㆻㆷˊ˫˙|"
+#   comment_format:
+#     __patch:
+#       - tsuim:/pinyin_to_tsuim
+#       - tsuim:/keymap_bopomofo
+#       - tsuim:/bopomofo_symbols
+
+
+
+#reverse_lookup:
+#  dictionary: luna_pinyin
+#  prefix: "`"
+#  tips: 〔拼音〕
+#  preedit_format:
+#    - xform/([nljqxy])v/$1ü/
+
+# tsuim_reverse_lookup:
+#   tags: [ custom_reverse_lookup ]
+#   overwrite_comment: true
+#   dictionary: bopomo_onion.extended
+#   comment_format:
+#     - xform/iu/iou/
+#     - xform/ui/uei/
+#     - xform/ong/ung/
+#     - xform/yi?/i/
+#     - xform/wu?/u/
+#     - xform/iu/v/
+#     - xform/([jqx])u/$1v/
+#     - xform/([iuv])n/$1en/
+#     - xform/zhi?/Z/
+#     - xform/chi?/C/
+#     - xform/shi?/S/
+#     - xform/([zcsr])i/$1/
+#     - xform/ai/A/
+#     - xform/ei/I/
+#     - xform/ao/O/
+#     - xform/ou/U/
+#     - xform/ang/K/
+#     - xform/eng/G/
+#     - xform/an/M/
+#     - xform/en/N/
+#     - xform/er/R/
+#     - xform/eh/E/
+#     - xform/([iv])e/$1E/
+#     - xform/1//
+#     - 'xlit|bpmfdtnlgkhjqxZCSrzcsiuvaoeEAIOUMNKGR2345|ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄧㄨㄩㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦˊˇˋ˙|'
+
+punctuator:
+  # import_preset: moetaigi-tsuim-symbols
+  # 依照教育部《重訂標點符號手冊》排序
+  # https://language.moe.gov.tw/001/upload/files/site_content/m0001/hau/haushou.htm
+  full_shape: &symtable
+    ">" : { commit: "。" }
+    "." : { commit: "，" }
+    "\"" : { commit: "、" }
+    "\\" : { commit: "；" }
+    "=" : { commit: "：" }
+    "?" : { commit: "？" }
+    "[" : [ "「", "〈" ]
+    "]" : [ "」", "〉"]
+    "{" : { commit: "（" }
+    "}" : { commit: "）" }
+    "?" : { commit: "？" }
+    "|" : { commit: "！" }
+    "_" : { commit: "─" }
+    "+" : [ "‧" ]
+    "~" : { commit: "～" }
+  half_shape: *symtable
+  symbols:
+    "[[" : [ "『", "《" ]
+    "]]" : [ "』", "》" ]
+    "++" : [ "…" ]
+    "+++" : [ "…" ]
+
+recognizer:
+  # import_preset: default
+  patterns:
+    punct: "[[]{2}$|[]]{2}$|[+]{2,3}$"    # 比對 "[[", "]]", "++", 和 "+++"
+    # reverse_lookup: "`[a-z]*$"   # wrong pattern
+    # reverse_lookup: "`.*$"
+    # custom_reverse_lookup: "`[a-z]*$"   # wrong pattern
+    learning: "'.*$"
+    zhuyin: "`.*$"
+
+editor:
+  bindings:
+    Return: confirm   # Enter 上屏
+#     space: toggle_selection
+
+key_binder:
+  # import_preset: default
+  bindings:
+    - { when: always, accept: space, send: Return } # 隨時都可按 space 上屏（也就是取消一四聲輸入候選字功能）
+  #  - { when: has_menu, accept: minus, send: minus }  # 第7調
+  #  - { when: paging, accept: minus, send: Page_Up }
+
+
+
+style:
+
+  # ==========================================================================================
+  # RIME (Windows 小狼豪版) 使用微軟雅黑作為預設字型。雅黑支援所有的台語注音符號，但是仍存在兩個問題：
+  # 1. 某些字不遵守繁體漢字在台灣的規範寫法。 (例如「骨」、「過」)
+  # 2. 少部分的台語外字無法正常顯示。 (例如「足百」山)
+  # 因此，本輸入法需要使用者預先安裝指定的字型「源樣黑體」的 Light 字重版本。
+  font_face: 源樣黑體 L
+  # 如果您較喜歡 Regular 字重，也可手動切換為源樣黑體 R。
+  # font_face: 源樣黑體 R
+  # 下列其他字型可滿足部分的需求：
+  # font_face: jf open 粉圓 1.1     # 支援正體中文漢字規範與大部分的台語外字，然而不支援臺語注音符號。
+  # font_face: Tauhu Oo 20.05     # 支援正體中文漢字規範與幾乎所有的台語外字，然而不支援臺語注音符號。
+  # font_face: 標楷體             # 支援正體中文漢字規範，不支援臺語注音符號，以及許多台語外字。
+  # font_face: 微軟正黑體         # 支援正體中文漢字規範以及臺語注音符號，但不支援許多台語外字。
+  # ==========================================================================================
+  # display_tray_icon: false
+  # font_point: 24
+  # fullscreen: false
+  # horizontal: true
+  # inline_preedit: false
+  # layout:
+  #   border_width: 3
+  #   candidate_spacing: 5
+  #   hilite_padding: 2
+  #   hilite_spacing: 4
+  #   margin_x: 12
+  #   margin_y: 6
+  #   min_height: 0
+  #   min_width: 160
+  #   round_corner: 4
+  #   spacing: 10
