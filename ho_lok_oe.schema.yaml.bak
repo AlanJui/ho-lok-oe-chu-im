@@ -1,0 +1,126 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: ho_lok_oe
+  name: 河洛話注音
+  version: "0.1"
+  author: 
+    - 居正中 AlanJui <alanjui.1960@gmail.com>
+  description: 以《彙集雅俗通十五音》為基礎的「河洛話」注音工具
+
+# engine:
+#   processors:
+#     - punctuator
+#     - express_editor
+#   segmentors:
+#     - punct_segmentor
+#   translators:
+#     - punct_translator
+
+engine:
+  processors:
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - abc_segmentor
+    - punct_segmentor
+  translators:
+    - punct_translator
+    - r10n_translator
+
+translator:
+  dictionary: ho_lok_oe
+
+speller:
+  algebra:
+    - 'abbrev/^([a-z]).+$/$1/'
+    - 'abbrev/^([zcs]h).+$/$1/'
+
+punctuator:
+  half_shape: &symtable
+    "1" : ㄅ
+    "q" : ㄆ
+    "a" : ㄇ
+    "z" : ㆷ
+    "2" : ㄉ
+    "w" : ㄊ
+    "s" : ㄋ
+    "x" : ㄌ
+    "3" : ˪
+    "e" : ㄍ
+    "d" : ㄎ
+    "c" : ㄏ
+    "4" : ˋ
+    "r" : ㄐ
+    "f" : ㄑ
+    "v" : ㄒ
+    "5" : ˫
+    "t" : ㆵ
+    "g" : ㆻ
+    "b" : ㆴ
+    "6" : ˊ
+    "y" : ㄗ
+    "h" : ㄘ
+    "n" : ㄙ
+    "7" : ．
+    "u" : ㄧ
+    "j" : ㄨ
+    "m" : ㆬ
+    "8" : ㄚ
+    "i" : ㆦ
+    "k" : ㄜ
+    "," : ㆰ
+    "9" : ㄞ
+    "o" : ㆤ
+    "l" : ㄠ
+    "." : .
+    "0" : ㄢ
+    "p" : ㄣ
+    ";" : ㄤ
+    "/" : ㄥ
+    "-" : ㆭ
+    "!" : ㆠ
+    "Q" : Q
+    "A" : A
+    "Z" : Z
+    "@" : \@
+    "W" : W
+    "S" : S
+    "X" : X
+    "#" : \#
+    "E" : ㆣ
+    "D" : D
+    "C" : C
+    "$" : $
+    "R" : ㆢ
+    "F" : F
+    "V" : V
+    "%" : \%
+    "T" : T
+    "G" : G
+    "B" : B
+    "^" : ^
+    "Y" : ㆡ
+    "H" : H
+    "N" : N
+    "&" : \&
+    "U" : ㆪ
+    "J" : ㆫ
+    "M" : M
+    "*" : ㆩ
+    "I" : ㆧ
+    "K" : K
+    "<" : ㆱ
+    "(" : ㆮ
+    "O" : ㆥ
+    "L" : ㆯ
+    ">" : >
+    ")" : )
+    "P" : P
+    ":" : ㆲ
+  full_shape: *symtable
