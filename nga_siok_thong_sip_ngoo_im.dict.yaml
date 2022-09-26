@@ -2,13 +2,12 @@
 # encoding: utf-8
 
 ---
-name: ho_lok_oe
+name: nga_siok_thong_sip_ngoo_im
 version: "1"
 sort: by_weight
 use_preset_vocabulary: true
-import_tables:
-  - nga_siok_thong_sip_ngoo_im
 ...
+#   單字
 𪑖	pun1	
 𪒰	pun1	1%
 君	kun1	
@@ -76,17 +75,17 @@ import_tables:
 飧	sun1	
 飱	sun1	
 槂	sun1	
-温	qun1	
-溫	qun1	1%
-氳	qun1	
-熅	qun1	
-瘟	qun1	
-薀	qun1	
-馧	qun1	
-豱	qun1	
-鰮	qun1	
-蒕	qun1	
-㬈	qun1	
+温	un1	
+溫	un1	1%
+氳	un1	
+熅	un1	
+瘟	un1	
+薀	un1	
+馧	un1	
+豱	un1	
+鰮	un1	
+蒕	un1	
+㬈	un1	
 春	chun1	
 村	chun1	
 邨	chun1	1%
@@ -197,18 +196,18 @@ import_tables:
 筍	sun2	
 笋	sun2	1%
 簨	sun2	
-允	qun2	
-𠃔	qun2	1%
-狁	qun2	
-吮	qun2	
-隕	qun2	
-殞	qun2	
-傊	qun2	
-穩	qun2	
-賱	qun2	
-䪳	qun2	
-愪	qun2	
-磒	qun2	
+允	un2	
+𠃔	un2	1%
+狁	un2	
+吮	un2	
+隕	un2	
+殞	un2	
+傊	un2	
+穩	un2	
+賱	un2	
+䪳	un2	
+愪	un2	
+磒	un2	
 刎	bun2	
 吻	bun2	
 蚊	bun2	
@@ -297,13 +296,13 @@ import_tables:
 𢁅	sun3	1%
 潠	sun3	
 噀	sun3	
-慍	qun3	
-蘊	qun3	
-搵	qun3	
-縕	qun3	
-醞	qun3	
-韞	qun3	
-溫	qun3	
+慍	un3	
+蘊	un3	
+搵	un3	
+縕	un3	
+醞	un3	
+韞	un3	
+溫	un3	
 寸	chun3	
 訓	hun3	
 僨	hun3	
@@ -362,18 +361,18 @@ import_tables:
 蟀	sut4	
 𩘱	sut4	
 𠞩	sut4	
-熨	qut4	
-菀	qut4	
-鬱	qut4	
-欝	qut4	1%
-叞	qut4	1%
-殟	qut4	
-𩑦	qut4	
-𢺴	qut4	
-𡨿	qut4	
-𩰪	qut4	
-𠝑	qut4	
-爩	qut4	
+熨	ut4	
+菀	ut4	
+鬱	ut4	
+欝	ut4	1%
+叞	ut4	1%
+殟	ut4	
+𩑦	ut4	
+𢺴	ut4	
+𡨿	ut4	
+𩰪	ut4	
+𠝑	ut4	
+爩	ut4	
 魩	but4	
 𡼘	gut4	
 矻	gut4	
@@ -482,9 +481,9 @@ import_tables:
 杊	sun5	
 純	sun5	
 焞	sun5	
-沄	qun5	
-澐	qun5	
-縜	qun5	
+沄	un5	
+澐	un5	
+縜	un5	
 文	bun5	
 旻	bun5	
 雯	bun5	
@@ -541,15 +540,15 @@ import_tables:
 媆	jun7	
 嫰	jun7	1%
 順	sun7	
-運	qun7	
-暈	qun7	
-緷	qun7	
-鄆	qun7	
-韻	qun7	
-韵	qun7	1%
+運	un7	
+暈	un7	
+緷	un7	
+鄆	un7	
+韻	un7	
+韵	un7	1%
 問	bun7	
 們	bun7	
-聞	bun7	0.1
+聞	bun7	10%
 悶	bun7	
 紊	bun7	
 汶	bun7	
@@ -711,26 +710,26 @@ import_tables:
 羴	sian1	1%
 羶	sian1	
 𠑣	sian1	1%
-煙	qian1	
-烟	qian1	1%
-菸	qian1	
-湮	qian1	
-咽	qian1	
-胭	qian1	
-臙	qian1	1%
-燕	qian1	
-漹	qian1	
-嫣	qian1	
-鄢	qian1	
-淵	qian1	
-𣶒	qian1	1%
-鳶	qian1	
-䗡	qian1	
-焉	qian1	
-姻	qian1	
-婣	qian1	
-闉	qian1	
-甄	qian1	
+煙	ian1	
+烟	ian1	1%
+菸	ian1	
+湮	ian1	
+咽	ian1	
+胭	ian1	
+臙	ian1	1%
+燕	ian1	
+漹	ian1	
+嫣	ian1	
+鄢	ian1	
+淵	ian1	
+𣶒	ian1	1%
+鳶	ian1	
+䗡	ian1	
+焉	ian1	
+姻	ian1	
+婣	ian1	
+闉	ian1	
+甄	ian1	
 千	chian1	
 仟	chian1	
 芊	chian1	
@@ -827,15 +826,15 @@ import_tables:
 獮	sian2	
 鮮	sian2	
 𣭡	sian2	1%
-偃	qian2	
-堰	qian2	
-鰋	qian2	
-鶠	qian2	
-衍	qian2	
-演	qian2	
-兖	qian2	
-𠻤	qian2	
-琰	qian2	
+偃	ian2	
+堰	ian2	
+鰋	ian2	
+鶠	ian2	
+衍	ian2	
+演	ian2	
+兖	ian2	
+𠻤	ian2	
+琰	ian2	
 免	bian2	
 丏	bian2	
 沔	bian2	
@@ -899,14 +898,14 @@ import_tables:
 綫	sian3	1%
 線	sian3	
 傓	sian3	
-燕	qian3	
-傿	qian3	
-嬿	qian3	
-嚥	qian3	
-咽	qian3	1%
-宴	qian3	
-讌	qian3	
-䞁	qian3	
+燕	ian3	
+傿	ian3	
+嬿	ian3	
+嚥	ian3	
+咽	ian3	1%
+宴	ian3	
+讌	ian3	
+䞁	ian3	
 倩	chian3	
 𠋷	chian3	
 蒨	chian3	
@@ -1006,11 +1005,11 @@ import_tables:
 𤵺	siat4	1%
 疶	siat4	
 蔎	siat4	
-咽	qiat4	
-噎	qiat4	
-謁	qiat4	
-蠍	qiat4	
-蠮	qiat4	
+咽	iat4	
+噎	iat4	
+謁	iat4	
+蠍	iat4	
+蠮	iat4	
 齧	giat4	
 切	chiat4	
 血	hiat4	
@@ -1028,7 +1027,7 @@ import_tables:
 胼	pian5	
 駢	pian5	
 緶	pian5	
-平	pian5	0.1
+平	pian5	10%
 骿	pian5	
 乾	khian5	
 乹	khian5	1%
@@ -1045,7 +1044,7 @@ import_tables:
 填	thian5	
 嗔	thian5	
 闐	thian5	
-謄	thian5	0.1
+謄	thian5	10%
 瘨	thian5	
 前	chhian5	
 歬	chhian5	1%
@@ -1061,16 +1060,16 @@ import_tables:
 嬋	sian5	
 蟬	sian5	
 儃	sian5	
-延	qian5	
-筵	qian5	
-涎	qian5	
-沿	qian5	
-梴	qian5	
-鉛	qian5	
-緣	qian5	
-椽	qian5	
-𦢨	qian5	
-唌	qian5	
+延	ian5	
+筵	ian5	
+涎	ian5	
+沿	ian5	
+梴	ian5	
+鉛	ian5	
+緣	ian5	
+椽	ian5	
+𦢨	ian5	
+唌	ian5	
 棉	bian5	
 綿	bian5	
 緜	bian5	1%
@@ -1150,11 +1149,11 @@ import_tables:
 熯	sian7	
 磰	sian7	
 燀	sian7	
-衍	qian7	
-掾	qian7	
-緣	qian7	
-羨	qian7	
-院	qian7	
+衍	ian7	
+掾	ian7	
+緣	ian7	
+羨	ian7	
+院	ian7	
 面	bian7	
 靣	bian7	1%
 囬	bian7	1%
@@ -1223,7 +1222,7 @@ import_tables:
 舌	siat8	
 鞢	siat8	
 㓭	siat8	
-搧	qiat8	
+搧	iat8	
 篾	biat8	
 蔑	biat8	
 衊	biat8	
@@ -1266,12 +1265,12 @@ import_tables:
 針	chhim1	
 心	sim1	
 芯	sim1	
-陰	qim1	
-侌	qim1	1%
-音	qim1	
-愔	qim1	
-喑	qim1	
-瘖	qim1	
+陰	im1	
+侌	im1	1%
+音	im1	
+愔	im1	
+喑	im1	
+瘖	im1	
 深	chim1	
 祲	chim1	
 僭	chim1	
@@ -1318,8 +1317,8 @@ import_tables:
 審	sim2	
 哂	sim2	
 諗	sim2	
-飲	qim2	
-㱃	qim2	1%
+飲	im2	
+㱃	im2	1%
 趛	gim2	
 寢	chim2	
 侵	chim2	
@@ -1342,8 +1341,8 @@ import_tables:
 浸	chhim3	
 寖	chhim3	
 趛	sim3	
-廕	qim3	
-蔭	qim3	
+廕	im3	
+蔭	im3	
 沁	chim3	
 𢊖	chim3	
 焮	him3	
@@ -1371,15 +1370,15 @@ import_tables:
 隰	sip4	
 溼	sip4	
 霫	sip4	
-邑	qip4	
-俋	qip4	
-悒	qip4	
-䇼	qip4	
-裛	qip4	
-浥	qip4	
-挹	qip4	
-揖	qip4	
-熠	qip4	
+邑	ip4	
+俋	ip4	
+悒	ip4	
+䇼	ip4	
+裛	ip4	
+浥	ip4	
+挹	ip4	
+揖	ip4	
+熠	ip4	
 偮	chip4	
 𠍱	chip4	
 咠	chip4	
@@ -1433,10 +1432,10 @@ import_tables:
 𩰿	sim5	1%
 覃	sim5	
 蟳	sim5	
-婬	qim5	
-淫	qim5	
-霪	qim5	
-蟫	qim5	
+婬	im5	
+淫	im5	
+霪	im5	
+蟫	im5	
 吟	gim5	
 岑	gim5	
 涔	gim5	
@@ -1464,7 +1463,7 @@ import_tables:
 䀔	jim7	
 侺	sim7	
 甚	sim7	
-𧥸	qim7	
+𧥸	im7	
 顉	gim7	
 立	lip8	
 𡗓	lip8	1%
@@ -1532,9 +1531,9 @@ import_tables:
 鏙	sui1	
 浽	sui1	
 蓑	sui1	
-威	qui1	
-葳	qui1	
-逶	qui1	
+威	ui1	
+葳	ui1	
+逶	ui1	
 溦	bui1	
 崔	chui1	
 催	chui1	
@@ -1604,23 +1603,23 @@ import_tables:
 㭰	chhui2	1%
 嘴	chhui2	
 水	sui2	
-偉	qui2	
-韋	qui2	
-煒	qui2	
-葦	qui2	
-韙	qui2	
-瑋	qui2	
-韡	qui2	
-洧	qui2	
-鮪	qui2	
-唯	qui2	
-㖐	qui2	
-蒍	qui2	
-薳	qui2	1%
-諉	qui2	
-委	qui2	
-虺	qui2	
-褘	qui2	
+偉	ui2	
+韋	ui2	
+煒	ui2	
+葦	ui2	
+韙	ui2	
+瑋	ui2	
+韡	ui2	
+洧	ui2	
+鮪	ui2	
+唯	ui2	
+㖐	ui2	
+蒍	ui2	
+薳	ui2	1%
+諉	ui2	
+委	ui2	
+虺	ui2	
+褘	ui2	
 頠	gui2	
 隗	gui2	
 姽	gui2	
@@ -1676,11 +1675,11 @@ import_tables:
 邃	sui3	
 誶	sui3	
 淬	sui3	
-尉	qui3	
-蔚	qui3	
-慰	qui3	
-畏	qui3	
-𢠢	qui3	1%
+尉	ui3	
+蔚	ui3	
+慰	ui3	
+畏	ui3	
+𢠢	ui3	1%
 翠	chui3	
 倅	chui3	
 啐	chui3	
@@ -1732,20 +1731,20 @@ import_tables:
 垂	sui5	
 瓍	sui5	
 棰	sui5	
-帷	qui5	
-惟	qui5	
-唯	qui5	
-維	qui5	
-濰	qui5	
-椲	qui5	
-幃	qui5	
-闈	qui5	
-圍	qui5	
-違	qui5	
-遺	qui5	
-為	qui5	1%
-爲	qui5	
-桅	qui5	
+帷	ui5	
+惟	ui5	
+唯	ui5	
+維	ui5	
+濰	ui5	
+椲	ui5	
+幃	ui5	
+闈	ui5	
+圍	ui5	
+違	ui5	
+遺	ui5	
+為	ui5	1%
+爲	ui5	
+桅	ui5	
 隗	gui5	
 嵬	gui5	
 巍	gui5	
@@ -1799,17 +1798,17 @@ import_tables:
 瑞	sui7	
 穟	sui7	
 𢢝	sui7	
-位	qui7	
-胃	qui7	
-渭	qui7	
-謂	qui7	
-蝟	qui7	
-為	qui7	1%
-爲	qui7	
-磑	qui7	
-壝	qui7	
-諉	qui7	
-鄬	qui7	
+位	ui7	
+胃	ui7	
+渭	ui7	
+謂	ui7	
+蝟	ui7	
+為	ui7	1%
+爲	ui7	
+磑	ui7	
+壝	ui7	
+諉	ui7	
+鄬	ui7	
 偽	gui7	1%
 僞	gui7	
 魏	gui7	
@@ -1858,8 +1857,8 @@ import_tables:
 裟	se1	
 鯊	se1	
 䤬	se1	
-㝞	qe1	
-𣵾	qe1	
+㝞	e1	
+𣵾	e1	
 差	che1	
 叉	che1	
 侘	che1	
@@ -1881,8 +1880,8 @@ import_tables:
 䱹	chhe2	
 鮓	chhe2	1%
 傻	se2	
-瘂	qe2	1%
-啞	qe2	
+瘂	e2	1%
+啞	e2	
 馬	be2	
 瑪	be2	
 仛	che2	
@@ -1984,10 +1983,10 @@ import_tables:
 潸	san1	
 芟	san1	
 邖	san1	
-安	qan1	
-鞍	qan1	
-侒	qan1	
-鵪	qan1	
+安	an1	
+鞍	an1	
+侒	an1	
+鵪	an1	
 孱	chan1	
 潺	chan1	
 飡	chan1	1%
@@ -2072,11 +2071,11 @@ import_tables:
 汕	san3	
 訕	san3	
 線	san3	
-按	qan3	
-案	qan3	
-晏	qan3	
-鷃	qan3	
-唵	qan3	
+按	an3	
+案	an3	
+晏	an3	
+鷃	an3	
+唵	an3	
 燦	chan3	
 粲	chan3	
 璨	chan3	
@@ -2114,12 +2113,12 @@ import_tables:
 鎩	sat4	
 撒	sat4	
 薩	sat4	
-𠃉	qat4	
-遏	qat4	
-按	qat4	
-揠	qat4	
-頞	qat4	
-圠	qat4	
+𠃉	at4	
+遏	at4	
+按	at4	
+揠	at4	
+頞	at4	
+圠	at4	
 察	chat4	
 剎	chat4	
 𣘤	chat4	
@@ -2152,7 +2151,7 @@ import_tables:
 彈	than5	
 殘	chhan5	
 䝳	chhan5	
-𢰍	qan5	
+𢰍	an5	
 曼	ban5	
 墁	ban5	
 漫	ban5	
@@ -2185,10 +2184,10 @@ import_tables:
 段	tan7	
 誕	tan7	
 棧	chhan7	
-限	qan7	
-㡾	qan7	
-䦘	qan7	
-𨵬	qan7	
+限	an7	
+㡾	an7	
+䦘	an7	
+𨵬	an7	
 萬	ban7	
 万	ban7	
 曼	ban7	
@@ -2341,13 +2340,13 @@ import_tables:
 艭	song1	
 桑	song1	
 喪	song1	
-翁	qong1	
-蓊	qong1	
-㑌	qong1	1%
-尩	qong1	1%
-尫	qong1	
-汪	qong1	
-螉	qong1	
+翁	ong1	
+蓊	ong1	
+㑌	ong1	1%
+尩	ong1	1%
+尫	ong1	
+汪	ong1	
+螉	ong1	
 倉	chong1	
 仺	chong1	1%
 蒼	chong1	
@@ -2463,13 +2462,13 @@ import_tables:
 䈡	song2	
 𣞙	song2	
 爽	song2	
-往	qong2	
-徃	qong2	1%
-枉	qong2	
-嵡	qong2	
-坱	qong2	
-𡩥	qong2	
-暡	qong2	
+往	ong2	
+徃	ong2	1%
+枉	ong2	
+嵡	ong2	
+坱	ong2	
+𡩥	ong2	
+暡	ong2	
 莽	bong2	
 莾	bong2	1%
 𠈵	bong2	
@@ -2487,7 +2486,7 @@ import_tables:
 鉧	bong2	
 䭺	gong2	
 愴	chong2	
-倉	chong2	0.1
+倉	chong2	10%
 仿	hong2	
 㑂	hong2	1%
 倣	hong2	1%
@@ -2501,7 +2500,7 @@ import_tables:
 紡	hong2	
 訪	hong2	
 諷	hong2	
-風	hong2	0.1
+風	hong2	10%
 唪	hong2	
 謊	hong2	
 捧	hong2	
@@ -2565,11 +2564,11 @@ import_tables:
 喪	song3	
 送	song3	
 𨓵	song3	1%
-坱	qong3	
-塕	qong3	1%
-瞈	qong3	
-瓮	qong3	1%
-甕	qong3	
+坱	ong3	
+塕	ong3	1%
+瞈	ong3	
+瓮	ong3	1%
+甕	ong3	
 𢟨	bong3	
 創	chong3	
 剙	chong3	1%
@@ -2688,11 +2687,11 @@ import_tables:
 㔄	sok4	
 數	sok4	
 朔	sok4	
-惡	qok4	
-僫	qok4	
-亞	qok4	
-堊	qok4	
-屋	qok4	
+惡	ok4	
+僫	ok4	
+亞	ok4	
+堊	ok4	
+屋	ok4	
 錯	chok4	
 簇	chok4	
 齪	chok4	
@@ -2813,8 +2812,8 @@ import_tables:
 𤄓	chhong5	
 崈	chhong5	
 傖	song5	
-仼	qong5	
-王	qong5	
+仼	ong5	
+王	ong5	
 亡	bong5	
 亾	bong5	1%
 忘	bong5	
@@ -2930,8 +2929,8 @@ import_tables:
 臟	chhong7	
 奘	chhong7	
 藏	chhong7	
-王	qong7	
-旺	qong7	
+王	ong7	
+旺	ong7	
 望	bong7	
 𪤀	bong7	1%
 妄	bong7	
@@ -3077,7 +3076,7 @@ import_tables:
 䲅	koai1	
 㔞	khoai1	
 𢶀	chhoai1	
-歪	qoai1	
+歪	oai1	
 竵	hoai1	
 拐	koai2	
 柺	koai2	
@@ -3091,8 +3090,8 @@ import_tables:
 駃	khoai3	
 噲	khoai3	
 塊	khoai3	
-䵳	qoai3	
-䶐	qoai3	
+䵳	oai3	
+䶐	oai3	
 𣸎	hoai3	
 𣟉	hoai3	
 詭	goai5	
@@ -3224,32 +3223,32 @@ import_tables:
 曐	seng1	
 聲	seng1	
 㮱	seng1	
-英	qeng1	
-偀	qeng1	
-媖	qeng1	
-瑛	qeng1	
-楧	qeng1	
-櫻	qeng1	
-嚶	qeng1	
-瓔	qeng1	
-孾	qeng1	
-嬰	qeng1	
-攖	qeng1	
-癭	qeng1	
-罌	qeng1	
-纓	qeng1	
-賏	qeng1	
-鸚	qeng1	
-鶯	qeng1	
-鸎	qeng1	
-鷹	qeng1	
-薨	qeng1	
-轟	qeng1	
-焸	qeng1	
-應	qeng1	
-膺	qeng1	
-蘡	qeng1	
-癰	qeng1	
+英	eng1	
+偀	eng1	
+媖	eng1	
+瑛	eng1	
+楧	eng1	
+櫻	eng1	
+嚶	eng1	
+瓔	eng1	
+孾	eng1	
+嬰	eng1	
+攖	eng1	
+癭	eng1	
+罌	eng1	
+纓	eng1	
+賏	eng1	
+鸚	eng1	
+鶯	eng1	
+鸎	eng1	
+鷹	eng1	
+薨	eng1	
+轟	eng1	
+焸	eng1	
+應	eng1	
+膺	eng1	
+蘡	eng1	
+癰	eng1	
 清	cheng1	
 僜	cheng1	
 稱	cheng1	
@@ -3350,17 +3349,17 @@ import_tables:
 㾪	seng2	
 眚	seng2	
 醒	seng2	
-永	qeng2	
-𬽃	qeng2	1%
-𣱵	qeng2	1%
-栐	qeng2	
-穎	qeng2	
-頴	qeng2	1%
-㯋	qeng2	
-潁	qeng2	
-巊	qeng2	
-影	qeng2	
-景	qeng2	
+永	eng2	
+𬽃	eng2	1%
+𣱵	eng2	1%
+栐	eng2	
+穎	eng2	
+頴	eng2	1%
+㯋	eng2	
+潁	eng2	
+巊	eng2	
+影	eng2	
+景	eng2	
 猛	beng2	
 艋	beng2	
 蜢	beng2	
@@ -3414,9 +3413,9 @@ import_tables:
 性	seng3	
 貹	seng3	
 聖	seng3	
-應	qeng3	
-譍	qeng3	
-𤹥	qeng3	
+應	eng3	
+譍	eng3	
+𤹥	eng3	
 倀	cheng3	
 掅	cheng3	
 秤	cheng3	
@@ -3642,23 +3641,23 @@ import_tables:
 栻	sek4	
 奭	sek4	
 襫	sek4	
-億	qek4	
-𠐥	qek4	1%
-益	qek4	
-𠍳	qek4	1%
-嗌	qek4	
-啞	qek4	
-憶	qek4	
-抑	qek4	
-搤	qek4	
-扼	qek4	
-阨	qek4	
-厄	qek4	
-戹	qek4	1%
-豟	qek4	
-軛	qek4	
-臆	qek4	
-繶	qek4	
+億	ek4	
+𠐥	ek4	1%
+益	ek4	
+𠍳	ek4	1%
+嗌	ek4	
+啞	ek4	
+憶	ek4	
+抑	ek4	
+搤	ek4	
+扼	ek4	
+阨	ek4	
+厄	ek4	
+戹	ek4	1%
+豟	ek4	
+軛	ek4	
+臆	ek4	
+繶	ek4	
 啋	gek4	
 側	chek4	
 拆	chek4	
@@ -3790,27 +3789,27 @@ import_tables:
 筬	seng5	
 傖	seng5	
 乘	seng5	
-榮	qeng5	
-熒	qeng5	
-塋	qeng5	
-螢	qeng5	
-瑩	qeng5	
-滎	qeng5	
-縈	qeng5	
-營	qeng5	
-濙	qeng5	
-瀠	qeng5	
-瀯	qeng5	
-濚	qeng5	1%
-嵤	qeng5	
-巆	qeng5	1%
-嶸	qeng5	
-瀛	qeng5	
-嬴	qeng5	
-贏	qeng5	
-䑉	qeng5	
-盈	qeng5	
-楹	qeng5	
+榮	eng5	
+熒	eng5	
+塋	eng5	
+螢	eng5	
+瑩	eng5	
+滎	eng5	
+縈	eng5	
+營	eng5	
+濙	eng5	
+瀠	eng5	
+瀯	eng5	
+濚	eng5	1%
+嵤	eng5	
+巆	eng5	1%
+嶸	eng5	
+瀛	eng5	
+嬴	eng5	
+贏	eng5	
+䑉	eng5	
+盈	eng5	
+楹	eng5	
 明	beng5	
 眀	beng5	
 儚	beng5	
@@ -3904,12 +3903,12 @@ import_tables:
 𠅞	seng7	1%
 晟	seng7	
 䞉	seng7	
-詠	qeng7	
-咏	qeng7	1%
-泳	qeng7	
-瀅	qeng7	
-禜	qeng7	
-鎣	qeng7	
+詠	eng7	
+咏	eng7	1%
+泳	eng7	
+瀅	eng7	
+禜	eng7	
+鎣	eng7	
 命	beng7	
 孟	beng7	
 甯	beng7	
@@ -3998,46 +3997,46 @@ import_tables:
 蓆	sek8	
 射	sek8	
 穸	sek8	
-亦	qek8	
-㑊	qek8	
-伇	qek8	
-役	qek8	
-疫	qek8	
-奕	qek8	
-弈	qek8	
-帟	qek8	
-液	qek8	
-洂	qek8	1%
-腋	qek8	
-掖	qek8	
-剨	qek8	
-𠜻	qek8	1%
-劃	qek8	
-畫	qek8	
-譯	qek8	
-懌	qek8	
-斁	qek8	
-繹	qek8	
-驛	qek8	
-曎	qek8	
-嶧	qek8	
-易	qek8	
-𡱿	qek8	1%
-蜴	qek8	
-瘍	qek8	
-翼	qek8	
-射	qek8	
-翌	qek8	
-翊	qek8	
-弋	qek8	
-杙	qek8	
-黓	qek8	
-𩾢	qek8	
-𢍰	qek8	
-𢎀	qek8	
-豛	qek8	
-𧱕	qek8	
-豭	qek8	
+亦	ek8	
+㑊	ek8	
+伇	ek8	
+役	ek8	
+疫	ek8	
+奕	ek8	
+弈	ek8	
+帟	ek8	
+液	ek8	
+洂	ek8	1%
+腋	ek8	
+掖	ek8	
+剨	ek8	
+𠜻	ek8	1%
+劃	ek8	
+畫	ek8	
+譯	ek8	
+懌	ek8	
+斁	ek8	
+繹	ek8	
+驛	ek8	
+曎	ek8	
+嶧	ek8	
+易	ek8	
+𡱿	ek8	1%
+蜴	ek8	
+瘍	ek8	
+翼	ek8	
+射	ek8	
+翌	ek8	
+翊	ek8	
+弋	ek8	
+杙	ek8	
+黓	ek8	
+𩾢	ek8	
+𢍰	ek8	
+𢎀	ek8	
+豛	ek8	
+𧱕	ek8	
+豭	ek8	
 陌	bek8	
 脈	bek8	
 脉	bek8	1%
@@ -4153,12 +4152,12 @@ import_tables:
 痠	soan1	
 𦾹	soan1	
 𪘑	soan1	
-冤	qoan1	
-剜	qoan1	
-彎	qoan1	
-灣	qoan1	
-鴛	qoan1	
-川	chhoan1	
+冤	oan1	
+剜	oan1	
+彎	oan1	
+灣	oan1	
+鴛	oan1	
+川	choan1	
 拴	choan1	
 詮	choan1	
 銓	choan1	
@@ -4236,23 +4235,23 @@ import_tables:
 拶	soan2	
 桚	soan2	
 㭮	soan2	
-倇	qoan2	
-剜	qoan2	
-埦	qoan2	1%
-碗	qoan2	
-盌	qoan2	1%
-椀	qoan2	1%
-宛	qoan2	
-苑	qoan2	
-琬	qoan2	
-腕	qoan2	
-畹	qoan2	
-㽜	qoan2	1%
-婉	qoan2	
-浣	qoan2	
-莞	qoan2	
-遠	qoan2	
-阮	qoan2	
+倇	oan2	
+剜	oan2	
+埦	oan2	1%
+碗	oan2	
+盌	oan2	1%
+椀	oan2	1%
+宛	oan2	
+苑	oan2	
+琬	oan2	
+腕	oan2	
+畹	oan2	
+㽜	oan2	1%
+婉	oan2	
+浣	oan2	
+莞	oan2	
+遠	oan2	
+阮	oan2	
 滿	boan2	
 懣	boan2	
 晚	boan2	
@@ -4322,8 +4321,8 @@ import_tables:
 筭	soan3	1%
 蒜	soan3	
 祘	soan3	1%
-怨	qoan3	
-𠈢	qoan3	1%
+怨	oan3	
+𠈢	oan3	1%
 串	choan3	
 穿	choan3	
 篡	choan3	
@@ -4426,12 +4425,12 @@ import_tables:
 說	soat4	
 𠞯	soat4	
 刷	soat4	
-穵	qoat4	
-𡴭	qoat4	
-軋	qoat4	
-捾	qoat4	
-斡	qoat4	
-䯉	qoat4	
+穵	oat4	
+𡴭	oat4	
+軋	oat4	
+捾	oat4	
+斡	oat4	
+䯉	oat4	
 抹	boat4	
 秣	boat4	
 𤿗	boat4	
@@ -4496,21 +4495,21 @@ import_tables:
 璇	soan5	
 璿	soan5	1%
 𢭀	soan5	1%
-丸	qoan5	
-紈	qoan5	
-芄	qoan5	
-袁	qoan5	
-猿	qoan5	
-轅	qoan5	
-園	qoan5	
-萑	qoan5	
-莞	qoan5	
-畹	qoan5	
-員	qoan5	
-完	qoan5	
-𡷡	qoan5	
-𢄙	qoan5	
-圓	qoan5	
+丸	oan5	
+紈	oan5	
+芄	oan5	
+袁	oan5	
+猿	oan5	
+轅	oan5	
+園	oan5	
+萑	oan5	
+莞	oan5	
+畹	oan5	
+員	oan5	
+完	oan5	
+𡷡	oan5	
+𢄙	oan5	
+圓	oan5	
 慲	boan5	
 蹣	boan5	
 䊟	boan5	
@@ -4593,14 +4592,14 @@ import_tables:
 羨	soan7	
 𢭀	soan7	
 鑽	soan7	
-爰	qoan7	
-媛	qoan7	
-瑗	qoan7	
-湲	qoan7	
-援	qoan7	
-褑	qoan7	
-緩	qoan7	
-遠	qoan7	
+爰	oan7	
+媛	oan7	
+瑗	oan7	
+湲	oan7	
+援	oan7	
+褑	oan7	
+緩	oan7	
+遠	oan7	
 愿	goan7	1%
 原	goan7	1%
 傆	goan7	
@@ -4615,7 +4614,7 @@ import_tables:
 軓	hoan7	
 𨊠	hoan7	1%
 帆	hoan7	
-凡	hoan7	0.1
+凡	hoan7	10%
 槵	hoan7	
 患	hoan7	
 飯	hoan7	
@@ -4644,15 +4643,15 @@ import_tables:
 奪	toat8	
 絕	chhoat8	
 㿱	soat8	
-曰	qoat8	
-悅	qoat8	
-說	qoat8	1%
-閱	qoat8	
-粵	qoat8	
-戉	qoat8	
-鉞	qoat8	
-越	qoat8	
-樾	qoat8	
+曰	oat8	
+悅	oat8	
+說	oat8	1%
+閱	oat8	
+粵	oat8	
+戉	oat8	
+鉞	oat8	
+越	oat8	
+樾	oat8	
 末	boat8	
 沫	boat8	
 妺	boat8	
@@ -4752,16 +4751,16 @@ import_tables:
 艘	soo1	
 颼	soo1	
 廋	soo1	
-烏	qoo1	
-嗚	qoo1	
-於	qoo1	
-樢	qoo1	
-鷗	qoo1	
-鄔	qoo1	
-惡	qoo1	
-謳	qoo1	
-漚	qoo1	
-藲	qoo1	
+烏	oo1	
+嗚	oo1	
+於	oo1	
+樢	oo1	
+鷗	oo1	
+鄔	oo1	
+惡	oo1	
+謳	oo1	
+漚	oo1	
+藲	oo1	
 粗	choo1	
 麤	choo1	
 麄	choo1	1%
@@ -4860,19 +4859,19 @@ import_tables:
 溯	soo2	
 遡	soo2	1%
 艘	soo2	
-隖	qoo2	1%
-塢	qoo2	
-鄔	qoo2	
-嵨	qoo2	
-瑦	qoo2	
-溩	qoo2	
-漚	qoo2	
-嫗	qoo2	
-嘔	qoo2	
-歐	qoo2	
-甌	qoo2	
-喒	qoo2	1%
-埡	qoo2	
+隖	oo2	1%
+塢	oo2	
+鄔	oo2	
+嵨	oo2	
+瑦	oo2	
+溩	oo2	
+漚	oo2	
+嫗	oo2	
+嘔	oo2	
+歐	oo2	
+甌	oo2	
+喒	oo2	1%
+埡	oo2	
 畝	boo2	
 畆	boo2	1%
 牡	boo2	
@@ -4969,9 +4968,9 @@ import_tables:
 瘶	soo3	1%
 數	soo3	
 泝	soo3	
-惡	qoo3	
-僫	qoo3	
-亞	qoo3	
+惡	oo3	
+僫	oo3	
+亞	oo3	
 錯	choo3	
 醋	choo3	
 阼	choo3	
@@ -5263,16 +5262,16 @@ import_tables:
 翛	siau1	
 燒	siau1	
 稍	siau1	
-夭	qiau1	
-妖	qiau1	
-祅	qiau1	
-幺	qiau1	
-么	qiau1	
-要	qiau1	
-喓	qiau1	
-腰	qiau1	
-䙅	qiau1	
-葽	qiau1	
+夭	iau1	
+妖	iau1	
+祅	iau1	
+幺	iau1	
+么	iau1	
+要	iau1	
+喓	iau1	
+腰	iau1	
+䙅	iau1	
+葽	iau1	
 鍫	chiau1	
 鍬	chiau1	
 儌	hiau1	
@@ -5341,15 +5340,15 @@ import_tables:
 少	siau2	
 篠	siau2	
 嬲	siau2	
-夭	qiau2	
-殀	qiau2	
-舀	qiau2	
-窈	qiau2	
-鷕	qiau2	
-𩈏	qiau2	
-穾	qiau2	
-偠	qiau2	
-仸	qiau2	
+夭	iau2	
+殀	iau2	
+舀	iau2	
+窈	iau2	
+鷕	iau2	
+𩈏	iau2	
+穾	iau2	
+偠	iau2	
+仸	iau2	
 渺	biau2	
 緲	biau2	
 淼	biau2	
@@ -5416,9 +5415,9 @@ import_tables:
 峭	siau3	
 誚	siau3	
 䊥	siau3	
-要	qiau3	
-穾	qiau3	
-㹓	qiau3	
+要	iau3	
+穾	iau3	
+㹓	iau3	
 笑	chiau3	
 咲	chiau3	1%
 俏	chiau3	
@@ -5430,7 +5429,7 @@ import_tables:
 歗	chiau3	1%
 𦫢	chiau3	
 僚	liau5	
-佬	liau5	0.1
+佬	liau5	10%
 嘹	liau5	
 嶛	liau5	
 𡻪	liau5	
@@ -5494,23 +5493,23 @@ import_tables:
 皺	jiau5	
 韶	siau5	
 佋	siau5	
-姚	qiau5	
-佻	qiau5	
-僥	qiau5	
-㑾	qiau5	
-傜	qiau5	
-徭	qiau5	
-瑤	qiau5	
-搖	qiau5	
-窯	qiau5	
-窑	qiau5	1%
-窰	qiau5	1%
-遙	qiau5	
-謠	qiau5	
-颻	qiau5	
-陶	qiau5	
-嶢	qiau5	
-䍃	qiau5	
+姚	iau5	
+佻	iau5	
+僥	iau5	
+㑾	iau5	
+傜	iau5	
+徭	iau5	
+瑤	iau5	
+搖	iau5	
+窯	iau5	
+窑	iau5	1%
+窰	iau5	1%
+遙	iau5	
+謠	iau5	
+颻	iau5	
+陶	iau5	
+嶢	iau5	
+䍃	iau5	
 描	biau5	
 貓	biau5	
 猫	biau5	1%
@@ -5546,11 +5545,11 @@ import_tables:
 劭	siau7	
 佋	siau7	
 紹	siau7	
-曜	qiau7	
-燿	qiau7	1%
-耀	qiau7	
-𦡱	qiau7	
-鷂	qiau7	
+曜	iau7	
+燿	iau7	1%
+耀	iau7	
+𦡱	iau7	
+鷂	iau7	
 妙	biau7	
 玅	biau7	1%
 廟	biau7	
@@ -5678,7 +5677,7 @@ import_tables:
 壻	se3	1%
 些	se3	
 細	se3	
-妻	che3	0.1
+妻	che3	10%
 𥻥	che3	
 黎	le5	
 藜	le5	
@@ -5792,16 +5791,16 @@ import_tables:
 刣	chhiong1	
 嵩	siong1	
 倯	siong1	
-邕	qiong1	
-嗈	qiong1	
-𡄸	qiong1	1%
-癰	qiong1	
-雝	qiong1	
-灉	qiong1	
-壅	qiong1	
-饔	qiong1	
-雍	qiong1	
-廱	qiong1	
+邕	iong1	
+嗈	iong1	
+𡄸	iong1	1%
+癰	iong1	
+雝	iong1	
+灉	iong1	
+壅	iong1	
+饔	iong1	
+雍	iong1	
+廱	iong1	
 充	chiong1	
 𠑽	chiong1	1%
 㤝	chiong1	
@@ -5827,7 +5826,7 @@ import_tables:
 拱	kiong2	
 栱	kiong2	
 珙	kiong2	
-共	kiong2	0.1
+共	kiong2	10%
 鞏	kiong2	
 恐	khiong2	
 冢	thiong2	
@@ -5847,25 +5846,25 @@ import_tables:
 悚	siong2	
 竦	siong2	
 聳	siong2	
-俑	qiong2	
-甬	qiong2	
-踊	qiong2	
-涌	qiong2	1%
-湧	qiong2	
-筩	qiong2	
-𧗴	qiong2	
-勇	qiong2	
+俑	iong2	
+甬	iong2	
+踊	iong2	
+涌	iong2	1%
+湧	iong2	
+筩	iong2	
+𧗴	iong2	
+勇	iong2	
 㕳	hiong2	
 供	kiong3	
 㑋	khiong3	
 𣇬	khiong3	
-中	tiong3	0.1
+中	tiong3	10%
 衆	chhiong3	
 㐺	chhiong3	1%
 偅	chhiong3	
 種	chhiong3	
-壅	qiong3	
-擁	qiong3	
+壅	iong3	
+擁	iong3	
 縱	chiong3	
 從	chiong3	1%
 銃	chiong3	
@@ -5893,7 +5892,7 @@ import_tables:
 筑	tiok4	
 築	tiok4	
 斸	tiok4	
-斥	thiok4	0.1
+斥	thiok4	10%
 足	chhiok4	
 屬	chhiok4	
 柷	chhiok4	
@@ -5930,7 +5929,7 @@ import_tables:
 蹜	siok4	
 縮	siok4	
 粟	siok4	
-益	qiok4	0.1
+益	iok4	10%
 浞	chiok4	
 促	chiok4	
 哫	chiok4	
@@ -6009,21 +6008,21 @@ import_tables:
 崧	siong5	
 菘	siong5	
 嫦	siong5	
-庸	qiong5	
-傭	qiong5	
-墉	qiong5	
-慵	qiong5	
-鏞	qiong5	
-鄘	qiong5	
-容	qiong5	
-㝐	qiong5	1%
-傛	qiong5	
-瑢	qiong5	
-榕	qiong5	
-溶	qiong5	
-蓉	qiong5	
-鎔	qiong5	
-融	qiong5	
+庸	iong5	
+傭	iong5	
+墉	iong5	
+慵	iong5	
+鏞	iong5	
+鄘	iong5	
+容	iong5	
+㝐	iong5	1%
+傛	iong5	
+瑢	iong5	
+榕	iong5	
+溶	iong5	
+蓉	iong5	
+鎔	iong5	
+融	iong5	
 邛	giong5	
 筇	giong5	
 顒	giong5	
@@ -6036,7 +6035,7 @@ import_tables:
 訟	siong7	
 誦	siong7	
 頌	siong7	
-用	qiong7	
+用	iong7	
 㞲	giong7	
 𡵜	giong7	
 陸	liok8	
@@ -6086,18 +6085,18 @@ import_tables:
 属	siok8	1%
 蜀	siok8	
 焇	siok8	
-育	qiok8	
-毓	qiok8	
-俼	qiok8	1%
-鬻	qiok8	
-儥	qiok8	1%
-浴	qiok8	
-欲	qiok8	
-慾	qiok8	
-鵒	qiok8	
-喅	qiok8	
-煜	qiok8	
-昱	qiok8	
+育	iok8	
+毓	iok8	
+俼	iok8	1%
+鬻	iok8	
+儥	iok8	1%
+浴	iok8	
+欲	iok8	
+慾	iok8	
+鵒	iok8	
+喅	iok8	
+煜	iok8	
+昱	iok8	
 玉	giok8	
 鈺	giok8	
 獄	giok8	
@@ -6179,24 +6178,24 @@ import_tables:
 㛖	so1	
 𦞣	so1	1%
 溞	so1	
-窩	qo1	
-鍋	qo1	
-蝸	qo1	
-碢	qo1	
-萵	qo1	
-蒿	qo1	0.1
-滈	qo1	
-𩰫	qo1	1%
-𩰮	qo1	1%
-阿	qo1	
-屙	qo1	
-疴	qo1	
-倭	qo1	
-猗	qo1	
-呵	qo1	
-訶	qo1	
-苛	qo1	
-鏖	qo1	
+窩	o1	
+鍋	o1	
+蝸	o1	
+碢	o1	
+萵	o1	
+蒿	o1	10%
+滈	o1	
+𩰫	o1	1%
+𩰮	o1	1%
+阿	o1	
+屙	o1	
+疴	o1	
+倭	o1	
+猗	o1	
+呵	o1	
+訶	o1	
+苛	o1	
+鏖	o1	
 瑳	cho1	
 磋	cho1	
 嵯	cho1	
@@ -6292,11 +6291,11 @@ import_tables:
 鏁	so2	1%
 嫂	so2	
 䈗	so2	
-襖	qo2	
-妸	qo2	
-娿	qo2	
-婐	qo2	
-捰	qo2	
+襖	o2	
+妸	o2	
+娿	o2	
+婐	o2	
+捰	o2	
 拇	bo2	
 胟	bo2	1%
 𧿹	bo2	
@@ -6342,13 +6341,13 @@ import_tables:
 掃	so3	
 埽	so3	1%
 𧶈	so3	
-澳	qo3	
-奥	qo3	
-侉	qo3	
-隩	qo3	
-懊	qo3	
-啊	qo3	
-欸	qo3	
+澳	o3	
+奥	o3	
+侉	o3	
+隩	o3	
+懊	o3	
+啊	o3	
+欸	o3	
 操	cho3	
 挫	cho3	
 銼	cho3	1%
@@ -6549,12 +6548,12 @@ import_tables:
 篩	sai1	
 籭	sai1	1%
 犀	sai1	
-哀	qai1	
-埃	qai1	
-挨	qai1	
-欸	qai1	
-唉	qai1	
-唲	qai1	
+哀	ai1	
+埃	ai1	
+挨	ai1	
+欸	ai1	
+唉	ai1	
+唲	ai1	
 猜	chai1	
 啋	chai1	
 釵	chai1	
@@ -6585,15 +6584,15 @@ import_tables:
 𠏰	chhai2	
 崽	chhai2	
 𢄌	chhai2	
-暍	qai2	
-餲	qai2	
-靄	qai2	
-藹	qai2	
-靉	qai2	
-毐	qai2	
-矮	qai2	
-𨱥	qai2	
-欸	qai2	
+暍	ai2	
+餲	ai2	
+靄	ai2	
+藹	ai2	
+靉	ai2	
+毐	ai2	
+矮	ai2	
+𨱥	ai2	
+欸	ai2	
 𧰸	gai2	
 騃	gai2	
 綵	chai2	
@@ -6674,14 +6673,14 @@ import_tables:
 晒	sai3	1%
 殺	sai3	
 婿	sai3	
-愛	qai3	
-𢜤	qai3	1%
-僾	qai3	
-瞹	qai3	
-隘	qai3	
-縊	qai3	
-賹	qai3	
-伌	qai3	
+愛	ai3	
+𢜤	ai3	1%
+僾	ai3	
+瞹	ai3	
+隘	ai3	
+縊	ai3	
+賹	ai3	
+伌	ai3	
 蔡	chai3	
 菜	chai3	
 蠆	chai3	
@@ -6767,8 +6766,8 @@ import_tables:
 在	chhai7	
 廌	chhai7	
 豸	chhai7	
-噫	qai7	1%
-噯	qai7	
+噫	ai7	1%
+噯	ai7	
 礙	gai7	
 碍	gai7	1%
 亥	hai7	
@@ -6838,18 +6837,18 @@ import_tables:
 娠	sin1	
 甡	sin1	
 勝	sin1	
-因	qin1	
-囙	qin1	1%
-姻	qin1	
-婣	qin1	1%
-茵	qin1	
-恩	qin1	
-氤	qin1	
-駰	qin1	
-殷	qin1	
-慇	qin1	
-禋	qin1	
-闉	qin1	
+因	in1	
+囙	in1	1%
+姻	in1	
+婣	in1	1%
+茵	in1	
+恩	in1	
+氤	in1	
+駰	in1	
+殷	in1	
+慇	in1	
+禋	in1	
+闉	in1	
 親	chin1	
 𧡿	chin1	1%
 皴	chin1	
@@ -6891,19 +6890,19 @@ import_tables:
 恁	jin2	
 矧	sin2	
 蜃	sin2	
-隱	qin2	
-𬮽	qin2	1%
-𤔌	qin2	1%
-𠃊	qin2	1%
-㒚	qin2	
-引	qin2	
-紖	qin2	
-靷	qin2	
-尹	qin2	
-殷	qin2	
-蜃	qin2	
-螾	qin2	1%
-蚓	qin2	
+隱	in2	
+𬮽	in2	1%
+𤔌	in2	1%
+𠃊	in2	1%
+㒚	in2	
+引	in2	
+紖	in2	
+靷	in2	
+尹	in2	
+殷	in2	
+蜃	in2	
+螾	in2	1%
+蚓	in2	
 黽	bin2	
 僶	bin2	
 敏	bin2	
@@ -6949,8 +6948,8 @@ import_tables:
 囟	sin3	
 𩔨	sin3	1%
 顖	sin3	1%
-印	qin3	
-㒚	qin3	
+印	in3	
+㒚	in3	
 櫬	chin3	
 儭	chin3	
 襯	chin3	
@@ -7023,11 +7022,11 @@ import_tables:
 悉	sit4	
 蟋	sit4	
 室	sit4	
-一	qit4	
-弌	qit4	1%
-壹	qit4	
-乙	qit4	
-鳦	qit4	
+一	it4	
+弌	it4	1%
+壹	it4	
+乙	it4	
+鳦	it4	
 仡	git4	
 㐹	git4	1%
 吃	git4	
@@ -7095,19 +7094,19 @@ import_tables:
 承	sin5	
 臣	sin5	
 神	sin5	
-雲	qin5	
-云	qin5	
-澐	qin5	
-沄	qin5	
-芸	qin5	
-紜	qin5	
-耘	qin5	
-橒	qin5	
-寅	qin5	
-夤	qin5	
-匀	qin5	
-勻	qin5	
-畇	qin5	
+雲	in5	
+云	in5	
+澐	in5	
+沄	in5	
+芸	in5	
+紜	in5	
+耘	in5	
+橒	in5	
+寅	in5	
+夤	in5	
+匀	in5	
+勻	in5	
+畇	in5	
 民	bin5	
 氓	bin5	
 岷	bin5	
@@ -7162,13 +7161,13 @@ import_tables:
 賸	sin7	1%
 燼	sin7	
 腎	sin7	
-胤	qin7	
-𦙍	qin7	1%
-𦞩	qin7	1%
-孕	qin7	
-媵	qin7	
-𠊶	qin7	1%
-䞉	qin7	1%
+胤	in7	
+𦙍	in7	1%
+𦞩	in7	1%
+孕	in7	
+媵	in7	
+𠊶	in7	1%
+䞉	in7	1%
 憗	gin7	
 恨	hin7	
 弼	pit8	
@@ -7202,17 +7201,17 @@ import_tables:
 植	sit8	
 殖	sit8	
 襲	sit8	
-佚	qit8	
-佾	qit8	
-泆	qit8	
-軼	qit8	
-逸	qit8	
-遹	qit8	
-驈	qit8	
-鷸	qit8	
-溢	qit8	
-鎰	qit8	
-聿	qit8	
+佚	it8	
+佾	it8	
+泆	it8	
+軼	it8	
+逸	it8	
+遹	it8	
+驈	it8	
+鷸	it8	
+溢	it8	
+鎰	it8	
+聿	it8	
 宓	bit8	
 密	bit8	
 蜜	bit8	
@@ -7264,12 +7263,12 @@ import_tables:
 商	siang1	
 𧶜	siang1	1%
 𧷞	siang1	1%
-央	qiang1	
-泱	qiang1	
-秧	qiang1	
-殃	qiang1	
-鴦	qiang1	
-㒕	qiang1	
+央	iang1	
+泱	iang1	
+秧	iang1	
+殃	iang1	
+鴦	iang1	
+㒕	iang1	
 昌	chiang1	
 鯧	chiang1	
 閶	chiang1	
@@ -7310,12 +7309,12 @@ import_tables:
 攘	jiang2	
 宂	jiang2	
 賞	siang2	
-上	siang2	0.1
+上	siang2	10%
 想	siang2	
 鮝	siang2	
-養	qiang2	
-瀁	qiang2	
-䑆	qiang2	
+養	iang2	
+瀁	iang2	
+䑆	iang2	
 仰	giang2	
 倘	chiang2	
 僘	chiang2	
@@ -7348,12 +7347,12 @@ import_tables:
 障	chhiang3	
 瘴	chhiang3	
 相	siang3	
-映	qiang3	
-泱	qiang3	
-怏	qiang3	
-盎	qiang3	
-鞅	qiang3	
-佒	qiang3	
+映	iang3	
+泱	iang3	
+怏	iang3	
+盎	iang3	
+鞅	iang3	
+佒	iang3	
 倡	chiang3	
 唱	chiang3	
 昶	chiang3	
@@ -7384,12 +7383,12 @@ import_tables:
 嚼	chhiak4	
 爝	chhiak4	
 櫡	chhiak4	
-繳	chhiak4	0.1
+繳	chhiak4	10%
 削	siak4	
 屑	siak4	
 鑠	siak4	
 爍	siak4	
-約	qiak4	
+約	iak4	
 鵲	chiak4	
 雀	chiak4	
 綽	chiak4	
@@ -7429,20 +7428,20 @@ import_tables:
 嘗	siang5	
 甞	siang5	1%
 裳	siang5	
-楊	qiang5	
-瑒	qiang5	
-揚	qiang5	
-颺	qiang5	
-昜	qiang5	1%
-陽	qiang5	
-暘	qiang5	
-煬	qiang5	
-諹	qiang5	
-佯	qiang5	
-烊	qiang5	
-痒	qiang5	
-洋	qiang5	
-羊	qiang5	
+楊	iang5	
+瑒	iang5	
+揚	iang5	
+颺	iang5	
+昜	iang5	1%
+陽	iang5	
+暘	iang5	
+煬	iang5	
+諹	iang5	
+佯	iang5	
+烊	iang5	
+痒	iang5	
+洋	iang5	
+羊	iang5	
 㟅	giang5	
 場	chiang5	
 塲	chiang5	1%
@@ -7463,11 +7462,11 @@ import_tables:
 𨅘	piang7	
 倞	kiang7	
 强	kiang7	1%
-強	kiang7	0.1
+強	kiang7	10%
 謽	kiang7	
 彊	kiang7	1%
 丈	tiang7	
-長	tiang7	0.1
+長	tiang7	10%
 杖	tiang7	
 仗	tiang7	
 讓	jiang7	
@@ -7476,13 +7475,13 @@ import_tables:
 像	siang7	
 象	siang7	
 尚	siang7	
-樣	qiang7	
-𠍵	qiang7	
-㨾	qiang7	
-漾	qiang7	
-恙	qiang7	
-養	qiang7	0.1
-癢	qiang7	
+樣	iang7	
+𠍵	iang7	
+㨾	iang7	
+漾	iang7	
+恙	iang7	
+養	iang7	10%
+癢	iang7	
 仰	giang7	
 匠	chiang7	
 𤵼	hiang7	
@@ -7502,14 +7501,14 @@ import_tables:
 弱	jiak8	
 蒻	jiak8	
 溺	jiak8	
-藥	qiak8	
-躍	qiak8	
-龠	qiak8	
-籥	qiak8	
-鑰	qiak8	
-瀹	qiak8	
-礿	qiak8	
-禴	qiak8	1%
+藥	iak8	
+躍	iak8	
+龠	iak8	
+籥	iak8	
+鑰	iak8	
+瀹	iak8	
+礿	iak8	
+禴	iak8	1%
 虐	giak8	
 瘧	giak8	
 仢	hiak8	
@@ -7554,12 +7553,12 @@ import_tables:
 叁	sam1	1%
 杉	sam1	
 彡	sam1	
-庵	qam1	
-菴	qam1	1%
-葊	qam1	1%
-腌	qam1	
-腤	qam1	
-諳	qam1	
+庵	am1	
+菴	am1	1%
+葊	am1	1%
+腌	am1	
+腤	am1	
+諳	am1	
 儑	gam1	
 參	cham1	
 叅	cham1	1%
@@ -7616,9 +7615,9 @@ import_tables:
 魙	chham2	
 摻	sam2	
 糝	sam2	
-闇	qam2	
-黯	qam2	
-淊	qam2	
+闇	am2	
+黯	am2	
+淊	am2	
 𩛎	bam2	
 慘	cham2	
 憯	cham2	1%
@@ -7660,8 +7659,8 @@ import_tables:
 㣌	sam3	
 釤	sam3	
 俕	sam3	
-闇	qam3	
-暗	qam3	
+闇	am3	
+暗	am3	
 懺	cham3	
 讖	cham3	
 譀	ham3	
@@ -7714,13 +7713,13 @@ import_tables:
 颯	sap4	
 靸	sap4	
 霅	sap4	
-姶	qap4	
-哈	qap4	0.1
-唼	qap4	
-厭	qap4	0.1
-壓	qap4	
-押	qap4	
-鴨	qap4	
+姶	ap4	
+哈	ap4	10%
+唼	ap4	
+厭	ap4	10%
+壓	ap4	
+押	ap4	
+鴨	ap4	
 插	chap4	
 偛	chap4	
 𠝞	chap4	
@@ -7765,7 +7764,7 @@ import_tables:
 曇	tham5	
 讒	chham5	
 儳	sam5	
-䈄	qam5	
+䈄	am5	
 𤜘	bam5	
 巗	gam5	1%
 巖	gam5	
@@ -7824,7 +7823,7 @@ import_tables:
 劖	chham7	
 藂	chham7	
 儳	sam7	
-頷	qam7	
+頷	am7	
 憾	ham7	
 陷	ham7	
 餡	ham7	
@@ -7855,11 +7854,11 @@ import_tables:
 𧬩	chhap8	
 卅	sap8	
 𠦃	sap8	1%
-盍	qap8	
-嗑	qap8	
-盒	qap8	
-柙	qap8	
-狎	qap8	
+盍	ap8	
+嗑	ap8	
+盒	ap8	
+柙	ap8	
+狎	ap8	
 㬎	gap8	
 合	hap8	
 瓜	koa1	
@@ -7883,8 +7882,8 @@ import_tables:
 灑	soa2	
 洒	soa2	1%
 𧫝	soa2	
-瓦	qoa2	
-掗	qoa2	
+瓦	oa2	
+掗	oa2	
 觟	hoa2	
 踝	hoa2	
 倮	hoa2	
@@ -7896,23 +7895,23 @@ import_tables:
 挂	khoa3	1%
 跨	khoa3	
 𣹇	khoa3	
-溛	qoa3	
-搲	qoa3	
+溛	oa3	
+搲	oa3	
 𡧗	goa3	
 化	hoa3	
 𠤎	hoa3	1%
 桍	khoa5	
-娃	qoa5	
-哇	qoa5	
-蛙	qoa5	
-鼃	qoa5	1%
-窪	qoa5	
-漥	qoa5	1%
-窊	qoa5	
-洼	qoa5	
-呱	qoa5	
-媧	qoa5	
-騧	qoa5	
+娃	oa5	
+哇	oa5	
+蛙	oa5	
+鼃	oa5	1%
+窪	oa5	
+漥	oa5	1%
+窊	oa5	
+洼	oa5	
+呱	oa5	
+媧	oa5	
+騧	oa5	
 𠌶	hoa5	1%
 花	hoa5	
 芲	hoa5	1%
@@ -7944,8 +7943,8 @@ import_tables:
 牨	kang2	1%
 犅	kang2	
 傋	kang2	
-慃	qang2	
-傟	qang2	1%
+慃	ang2	
+傟	ang2	1%
 絳	kang3	
 降	kang3	
 洚	kang3	
@@ -7969,19 +7968,19 @@ import_tables:
 慤	khak4	1%
 愨	khak4	
 恪	khak4	
-沃	qak4	
-偓	qak4	
-握	qak4	
-幄	qak4	
-喔	qak4	
-渥	qak4	
-齷	qak4	
-鋈	qak4	
+沃	ak4	
+偓	ak4	
+握	ak4	
+幄	ak4	
+喔	ak4	
+渥	ak4	
+齷	ak4	
+鋈	ak4	
 厖	bang5	
 尨	bang5	
 哤	bang5	
 龐	bang5	
-仰	gang5	0.1
+仰	gang5	10%
 昂	gang5	
 杭	hang5	
 降	hang5	
@@ -8010,11 +8009,11 @@ import_tables:
 緘	kiam1	
 謙	khiam1	
 沾	tiam1	
-佔	tiam1	0.1
+佔	tiam1	10%
 霑	tiam1	
 添	thiam1	
 沗	thiam1	1%
-占	chhiam1	0.1
+占	chhiam1	10%
 佔	chhiam1	
 覘	chhiam1	1%
 𠌲	chhiam1	
@@ -8030,15 +8029,15 @@ import_tables:
 痁	siam1	
 銛	siam1	
 憸	siam1	
-奄	qiam1	
-偣	qiam1	
-淹	qiam1	
-醃	qiam1	
-厭	qiam1	0.1
-懕	qiam1	
-饜	qiam1	0.1
-猒	qiam1	1%
-閹	qiam1	
+奄	iam1	
+偣	iam1	
+淹	iam1	
+醃	iam1	
+厭	iam1	10%
+懕	iam1	
+饜	iam1	10%
+猒	iam1	1%
+閹	iam1	
 僉	chiam1	
 籤	chiam1	
 簽	chiam1	
@@ -8086,17 +8085,17 @@ import_tables:
 剡	siam2	
 掞	siam2	
 广	siam2	
-掩	qiam2	
-揜	qiam2	1%
-奄	qiam2	
-罨	qiam2	
-渰	qiam2	
-黶	qiam2	
-靨	qiam2	
-魘	qiam2	
-扊	qiam2	
-琰	qiam2	
-弇	qiam2	
+掩	iam2	
+揜	iam2	1%
+奄	iam2	
+罨	iam2	
+渰	iam2	
+黶	iam2	
+靨	iam2	
+魘	iam2	
+扊	iam2	
+琰	iam2	
+弇	iam2	
 儼	giam2	
 槧	chiam2	
 𨗦	chiam2	
@@ -8111,8 +8110,8 @@ import_tables:
 芡	khiam3	
 慊	khiam3	
 店	tiam3	
-佔	tiam3	0.1
-覘	tiam3	0.1
+佔	tiam3	10%
+覘	tiam3	10%
 玷	tiam3	
 坫	tiam3	
 墊	tiam3	
@@ -8123,18 +8122,18 @@ import_tables:
 𠀬	thiam3	1%
 占	chhiam3	
 佔	chhiam3	
-厭	qiam3	
-俺	qiam3	
-檿	qiam3	
-饜	qiam3	
-掞	qiam3	
-淹	qiam3	
+厭	iam3	
+俺	iam3	
+檿	iam3	
+饜	iam3	
+掞	iam3	
+淹	iam3	
 驗	giam3	
 騐	giam3	1%
 僭	chiam3	
 僣	chiam3	1%
 𧻒	hiam3	
-喊	hiam3	0.1
+喊	hiam3	10%
 聶	liap4	
 囁	liap4	
 懾	liap4	
@@ -8182,9 +8181,9 @@ import_tables:
 霎	siap4	
 攝	siap4	
 唊	siap4	
-曄	qiap4	
-燁	qiap4	
-饁	qiap4	
+曄	iap4	
+燁	iap4	
+饁	iap4	
 妾	chiap4	
 竊	chiap4	
 窃	chiap4	1%
@@ -8222,13 +8221,13 @@ import_tables:
 潜	chhiam5	1%
 燖	chhiam5	
 蟾	siam5	
-炎	qiam5	
-鹽	qiam5	
-塩	qiam5	1%
-閻	qiam5	
-閆	qiam5	
-檐	qiam5	
-𣡶	qiam5	
+炎	iam5	
+鹽	iam5	
+塩	iam5	1%
+閻	iam5	
+閆	iam5	
+檐	iam5	
+𣡶	iam5	
 𤉌	biam5	
 嚴	giam5	
 釅	giam5	
@@ -8252,12 +8251,12 @@ import_tables:
 𡜉	jiam7	
 贍	siam7	
 暹	siam7	
-豔	qiam7	
-艷	qiam7	
-灧	qiam7	
-焰	qiam7	
-燄	qiam7	1%
-焱	qiam7	1%
+豔	iam7	
+艷	iam7	
+灧	iam7	
+焰	iam7	
+燄	iam7	1%
+焱	iam7	1%
 姭	hiam7	
 粒	liap8	
 㘝	liap8	
@@ -8277,10 +8276,10 @@ import_tables:
 顳	jiap8	
 涉	siap8	
 揲	siap8	
-葉	qiap8	
-偞	qiap8	
-楪	qiap8	
-頁	qiap8	
+葉	iap8	
+偞	iap8	
+楪	iap8	
+頁	iap8	
 業	giap8	
 𠄅	giap8	
 鄴	giap8	
@@ -8297,7 +8296,7 @@ import_tables:
 愶	hiap8	
 脅	hiap8	
 胁	hiap8	1%
-佬	lau1	0.1
+佬	lau1	10%
 包	pau1	
 笣	pau1	
 胞	pau1	
@@ -8332,10 +8331,10 @@ import_tables:
 蛸	sau1	
 誚	sau1	
 嘲	sau1	1%
-坳	qau1	
-凹	qau1	1%
-䁱	qau1	
-瞘	qau1	1%
+坳	au1	
+凹	au1	1%
+䁱	au1	
+瞘	au1	1%
 鈔	chau1	
 抄	chau1	1%
 樔	chau1	
@@ -8362,10 +8361,10 @@ import_tables:
 巧	khau2	
 𦐸	phau2	
 𢾐	sau2	
-拗	qau2	
-敺	qau2	
-媪	qau2	1%
-媼	qau2	
+拗	au2	
+敺	au2	
+媪	au2	1%
+媼	au2	
 卯	bau2	
 昴	bau2	
 夘	bau2	1%
@@ -8388,10 +8387,10 @@ import_tables:
 皰	phau3	
 疱	phau3	
 哨	sau3	
-拗	qau3	
-㑃	qau3	1%
-𥑑	qau3	
-怮	qau3	
+拗	au3	
+㑃	au3	1%
+𥑑	au3	
+怮	au3	
 笊	chau3	
 孝	hau3	
 苞	pau5	
@@ -8418,7 +8417,7 @@ import_tables:
 櫂	chhau7	1%
 棹	chhau7	
 淖	chhau7	
-巢	chhau7	0.1
+巢	chhau7	10%
 𠻥	chhau7	
 傚	hau7	
 俲	hau7	1%
@@ -8461,10 +8460,10 @@ import_tables:
 舍	sia2	1%
 捨	sia2	
 寫	sia2	
-也	qia2	
-冶	qia2	
-野	qia2	
-埜	qia2	1%
+也	ia2	
+冶	ia2	
+野	ia2	
+埜	ia2	1%
 乜	bia2	
 𦰳	bia2	
 偖	chia2	
@@ -8485,7 +8484,7 @@ import_tables:
 卸	sia3	
 𡃂	sia3	1%
 瀉	sia3	
-伿	qia3	
+伿	ia3	
 㾝	chia3	
 赾	chia3	
 伽	kia5	
@@ -8495,13 +8494,13 @@ import_tables:
 邪	sia5	
 衺	sia5	1%
 蛇	sia5	
-爺	qia5	
-琊	qia5	
-耶	qia5	
-邪	qia5	1%
-釾	qia5	
-㭨	qia5	1%
-椰	qia5	
+爺	ia5	
+琊	ia5	
+耶	ia5	
+邪	ia5	1%
+釾	ia5	
+㭨	ia5	1%
+椰	ia5	
 乜	bia5	
 呀	gia5	
 哋	tia7	
@@ -8514,9 +8513,9 @@ import_tables:
 謝	sia7	
 麝	sia7	
 𥙭	sia7	1%
-夜	qia7	
-敥	qia7	
-也	qia7	0.1
+夜	ia7	
+敥	ia7	
+也	ia7	10%
 杯	poe1	
 柸	poe1	1%
 桮	poe1	1%
@@ -8536,19 +8535,19 @@ import_tables:
 衰	soe1	
 榱	soe1	
 縗	soe1	
-隈	qoe1	
-倭	qoe1	
-偎	qoe1	
-喂	qoe1	
-猥	qoe1	
-煨	qoe1	
-碨	qoe1	
-葨	qoe1	
-𣨙	qoe1	
-痿	qoe1	
-𩰻	qoe1	
-剮	qoe1	
-鍡	qoe1	
+隈	oe1	
+倭	oe1	
+偎	oe1	
+喂	oe1	
+猥	oe1	
+煨	oe1	
+碨	oe1	
+葨	oe1	
+𣨙	oe1	
+痿	oe1	
+𩰻	oe1	
+剮	oe1	
+鍡	oe1	
 灰	hoe1	
 虺	hoe1	
 隳	hoe1	
@@ -8556,7 +8555,7 @@ import_tables:
 餧	loe2	1%
 鮾	loe2	
 㱣	loe2	
-倍	poe2	0.1
+倍	poe2	10%
 俖	phoe2	
 𠳝	phoe2	
 琲	phoe2	
@@ -8579,7 +8578,7 @@ import_tables:
 檜	koe3	
 薈	koe3	
 儈	koe3	
-會	koe3	0.1
+會	koe3	10%
 澮	koe3	
 獪	koe3	
 𥢶	koe3	
@@ -8608,14 +8607,14 @@ import_tables:
 帥	soe3	
 說	soe3	
 晬	soe3	
-𢉝	qoe3	
-穢	qoe3	
-濊	qoe3	
-薉	qoe3	
-劌	qoe3	
-噦	qoe3	
-翽	qoe3	
-饖	qoe3	
+𢉝	oe3	
+穢	oe3	
+濊	oe3	
+薉	oe3	
+劌	oe3	
+噦	oe3	
+翽	oe3	
+饖	oe3	
 悔	hoe3	
 晦	hoe3	
 痗	hoe3	
@@ -8626,7 +8625,7 @@ import_tables:
 羸	loe5	
 𠑍	loe5	
 陪	poe5	
-倍	poe5	0.1
+倍	poe5	10%
 俳	poe5	
 培	poe5	
 掊	poe5	
@@ -8701,7 +8700,7 @@ import_tables:
 耒	joe7	
 銳	joe7	
 㘨	joe7	
-衛	qoe7	
+衛	oe7	
 外	goe7	
 𠨃	goe7	1%
 會	hoe7	
@@ -8787,16 +8786,16 @@ import_tables:
 獅	su1	
 顋	su1	
 腮	su1	
-笥	su1	0.1
-迂	qu1	
-紆	qu1	
-杇	qu1	
-圬	qu1	1%
-肟	qu1	
-洿	qu1	
-汙	qu1	1%
-污	qu1	
-趶	qu1	
+笥	su1	10%
+迂	u1	
+紆	u1	
+杇	u1	
+圬	u1	1%
+肟	u1	
+洿	u1	
+汙	u1	1%
+污	u1	
+趶	u1	
 夫	hu1	
 玞	hu1	
 砆	hu1	1%
@@ -8832,7 +8831,7 @@ import_tables:
 死	su2	
 𣦸	su2	1%
 駛	su2	
-鄔	qu2	
+鄔	u2	
 武	bu2	
 𢎁	bu2	1%
 娬	bu2	1%
@@ -8849,7 +8848,7 @@ import_tables:
 㵲	bu2	
 鵡	bu2	
 䳇	bu2	1%
-此	chhu2	
+此	chu2	
 啙	chu2	
 姕	chu2	1%
 訾	chu2	
@@ -8892,7 +8891,7 @@ import_tables:
 澍	chhu3	
 鑄	chhu3	
 馵	chhu3	
-足	chhu3	0.1
+足	chhu3	10%
 㧘	chhu3	
 駟	su3	
 使	su3	
@@ -8902,7 +8901,7 @@ import_tables:
 亖	su3	1%
 肆	su3	
 泗	su3	
-污	qu3	0.1
+污	u3	10%
 次	chu3	
 𣄭	chu3	1%
 佽	chu3	
@@ -8914,7 +8913,7 @@ import_tables:
 踣	hu3	
 赴	hu3	
 訃	hu3	
-覆	hu3	0.1
+覆	hu3	10%
 副	hu3	
 咐	hu3	
 𢂁	ku5	1%
@@ -8940,8 +8939,8 @@ import_tables:
 殊	su5	
 殳	su5	
 銖	su5	
-盂	qu5	
-𥁄	qu5	1%
+盂	u5	
+𥁄	u5	1%
 無	bu5	
 无	bu5	1%
 亡	bu5	1%
@@ -9002,7 +9001,7 @@ import_tables:
 婺	bu7	
 輔	hu7	
 父	hu7	
-伏	hu7	0.1
+伏	hu7	10%
 傅	hu7	
 媍	hu7	1%
 婦	hu7	
@@ -9028,11 +9027,11 @@ import_tables:
 柵	sa1	
 𡭟	sa1	1%
 𡭥	sa1	
-鴉	qa1	
-俹	qa1	
-亞	qa1	
-啞	qa1	
-丫	qa1	
+鴉	a1	
+俹	a1	
+亞	a1	
+啞	a1	
+丫	a1	
 叉	cha1	
 颬	ha1	
 霸	pa3	
@@ -9050,9 +9049,9 @@ import_tables:
 怕	pha3	
 帕	pha3	
 帊	pha3	
-亞	qa3	
-婭	qa3	
-俹	qa3	
+亞	a3	
+婭	a3	
+俹	a3	
 侘	cha3	
 吒	cha3	
 咤	cha3	1%
@@ -9200,39 +9199,39 @@ import_tables:
 書	si1	
 濡	si1	
 楈	si1	
-伊	qi1	
-𠁼	qi1	1%
-㐆	qi1	
-依	qi1	
-㥋	qi1	
-衣	qi1	
-於	qi1	
-扵	qi1	1%
-淤	qi1	
-洢	qi1	
-椅	qi1	
-吚	qi1	
-咿	qi1	
-漪	qi1	
-旑	qi1	1%
-旖	qi1	
-醫	qi1	
-毉	qi1	1%
-譩	qi1	
-猗	qi1	
-鷖	qi1	
-于	qi1	
-繄	qi1	
-欹	qi1	
-𣣱	qi1	1%
+伊	i1	
+𠁼	i1	1%
+㐆	i1	
+依	i1	
+㥋	i1	
+衣	i1	
+於	i1	
+扵	i1	1%
+淤	i1	
+洢	i1	
+椅	i1	
+吚	i1	
+咿	i1	
+漪	i1	
+旑	i1	1%
+旖	i1	
+醫	i1	
+毉	i1	1%
+譩	i1	
+猗	i1	
+鷖	i1	
+于	i1	
+繄	i1	
+欹	i1	
+𣣱	i1	1%
 睢	chi1	
-且	chi1	0.1
+且	chi1	10%
 癡	chi1	
 𠈴	chi1	1%
 痴	chi1	1%
 疽	chi1	
 狙	chi1	
-沮	chi1	0.1
+沮	chi1	10%
 蛆	chi1	
 苴	chi1	
 砠	chi1	
@@ -9248,7 +9247,7 @@ import_tables:
 嗤	chi1	
 媸	chi1	
 蚩	chi1	
-差	chi1	0.1
+差	chi1	10%
 嵯	chi1	
 瓻	chi1	
 㧘	chi1	
@@ -9284,7 +9283,7 @@ import_tables:
 昫	hi1	
 熙	hi1	
 焁	hi1	
-屎	hi1	0.1
+屎	hi1	10%
 噫	hi1	
 里	li2	
 俚	li2	
@@ -9440,35 +9439,35 @@ import_tables:
 矢	si2	
 弛	si2	
 死	si2	
-以	qi2	
-㠯	qi2	1%
-與	qi2	
-与	qi2	1%
-㒜	qi2	
-偊	qi2	
-倚	qi2	
-予	qi2	
-也	qi2	1%
-迆	qi2	
-苢	qi2	1%
-苡	qi2	
-雨	qi2	
-依	qi2	
-扆	qi2	
-偯	qi2	
-傴	qi2	
-禹	qi2	
-㝢	qi2	1%
-宇	qi2	
-已	qi2	
-瑀	qi2	
-楀	qi2	
-鄅	qi2	
-椅	qi2	
-掎	qi2	
-羽	qi2	
-庡	qi2	
-噢	qi2	
+以	i2	
+㠯	i2	1%
+與	i2	
+与	i2	1%
+㒜	i2	
+偊	i2	
+倚	i2	
+予	i2	
+也	i2	1%
+迆	i2	
+苢	i2	1%
+苡	i2	
+雨	i2	
+依	i2	
+扆	i2	
+偯	i2	
+傴	i2	
+禹	i2	
+㝢	i2	1%
+宇	i2	
+已	i2	
+瑀	i2	
+楀	i2	
+鄅	i2	
+椅	i2	
+掎	i2	
+羽	i2	
+庡	i2	
+噢	i2	
 米	bi2	
 敉	bi2	
 侎	bi2	1%
@@ -9566,7 +9565,7 @@ import_tables:
 去	khi3	
 厺	khi3	1%
 亟	khi3	
-企	khi3	0.1
+企	khi3	10%
 𠈮	khi3	1%
 跂	khi3	
 契	khi3	
@@ -9575,7 +9574,7 @@ import_tables:
 气	khi3	1%
 棄	khi3	
 弃	khi3	1%
-揭	khi3	0.1
+揭	khi3	10%
 憩	khi3	
 憇	khi3	1%
 愒	khi3	1%
@@ -9596,7 +9595,7 @@ import_tables:
 辟	phi3	1%
 屁	phi3	
 𥧔	phi3	1%
-翅	thi3	0.1
+翅	thi3	10%
 懥	thi3	
 疐	thi3	
 䶑	thi3	1%
@@ -9631,29 +9630,29 @@ import_tables:
 絮	si3	
 庶	si3	
 試	si3	
-施	si3	0.1
-意	qi3	
-鷾	qi3	
-噫	qi3	
-亄	qi3	
-伿	qi3	
-瘀	qi3	
-瘞	qi3	
-医	qi3	
-矣	qi3	
-飫	qi3	
-𩜈	qi3	
-曀	qi3	
-殪	qi3	
-饐	qi3	
-懿	qi3	
-豷	qi3	
-薏	qi3	
-瞖	qi3	
-翳	qi3	
-贀	qi3	
-衣	qi3	0.1
-雨	qi3	0.1
+施	si3	10%
+意	i3	
+鷾	i3	
+噫	i3	
+亄	i3	
+伿	i3	
+瘀	i3	
+瘞	i3	
+医	i3	
+矣	i3	
+飫	i3	
+𩜈	i3	
+曀	i3	
+殪	i3	
+饐	i3	
+懿	i3	
+豷	i3	
+薏	i3	
+瞖	i3	
+翳	i3	
+贀	i3	
+衣	i3	10%
+雨	i3	10%
 娶	chi3	
 取	chi3	1%
 佁	chi3	
@@ -9704,7 +9703,7 @@ import_tables:
 釐	li5	
 莉	li5	
 蜊	li5	
-麗	li5	0.1
+麗	li5	10%
 鸝	li5	
 驪	li5	
 驢	li5	
@@ -9874,60 +9873,60 @@ import_tables:
 鰣	si5	
 塒	si5	
 匙	si5	
-提	si5	0.1
+提	si5	10%
 蜍	si5	
 蠩	si5	1%
-于	qi5	
-亐	qi5	1%
-予	qi5	
-玗	qi5	
-妤	qi5	
-伃	qi5	
-侇	qi5	
-𢓡	qi5	
-蛦	qi5	
-余	qi5	
-輿	qi5	
-竽	qi5	
-芋	qi5	
-杅	qi5	
-譽	qi5	
-旟	qi5	
-畬	qi5	
-畭	qi5	1%
-餘	qi5	
-詒	qi5	
-貽	qi5	
-姨	qi5	
-璵	qi5	
-轝	qi5	
-台	qi5	0.1
-怡	qi5	
-移	qi5	
-峓	qi5	
-咦	qi5	
-跠	qi5	
-飴	qi5	
-匜	qi5	
-酏	qi5	
-蛇	qi5	0.1
-虵	qi5	1%
-痍	qi5	
-扅	qi5	
-彝	qi5	
-宧	qi5	
-圯	qi5	
-瓵	qi5	
-徾	qi5	
-雩	qi5	
-佗	qi5	1%
-頤	qi5	
-䞅	qi5	
-愉	qi5	
-歟	qi5	
-欤	qi5	1%
-與	qi5	1%
-夷	qi5	
+于	i5	
+亐	i5	1%
+予	i5	
+玗	i5	
+妤	i5	
+伃	i5	
+侇	i5	
+𢓡	i5	
+蛦	i5	
+余	i5	
+輿	i5	
+竽	i5	
+芋	i5	
+杅	i5	
+譽	i5	
+旟	i5	
+畬	i5	
+畭	i5	1%
+餘	i5	
+詒	i5	
+貽	i5	
+姨	i5	
+璵	i5	
+轝	i5	
+台	i5	10%
+怡	i5	
+移	i5	
+峓	i5	
+咦	i5	
+跠	i5	
+飴	i5	
+匜	i5	
+酏	i5	
+蛇	i5	10%
+虵	i5	1%
+痍	i5	
+扅	i5	
+彝	i5	
+宧	i5	
+圯	i5	
+瓵	i5	
+徾	i5	
+雩	i5	
+佗	i5	1%
+頤	i5	
+䞅	i5	
+愉	i5	
+歟	i5	
+欤	i5	1%
+與	i5	1%
+夷	i5	
 薇	bi5	
 微	bi5	
 眉	bi5	
@@ -10068,7 +10067,7 @@ import_tables:
 炷	chhi7	
 跓	chhi7	
 駐	chhi7	
-己	chhi7	0.1
+己	chhi7	10%
 舐	chhi7	
 聚	chhi7	
 二	ji7	
@@ -10122,27 +10121,27 @@ import_tables:
 𠐊	si7	1%
 㒘	si7	
 曙	si7	
-異	qi7	
-异	qi7	1%
-𠂆	qi7	
-易	qi7	
-伳	qi7	
-𢇸	qi7	
-泄	qi7	
-勩	qi7	
-豫	qi7	
-忬	qi7	1%
-預	qi7	
-㑥	qi7	
-芋	qi7	
-澦	qi7	
-洩	qi7	
-曳	qi7	
-輿	qi7	
-譽	qi7	
-肄	qi7	
-㑜	qi7	
-裔	qi7	
+異	i7	
+异	i7	1%
+𠂆	i7	
+易	i7	
+伳	i7	
+𢇸	i7	
+泄	i7	
+勩	i7	
+豫	i7	
+忬	i7	1%
+預	i7	
+㑥	i7	
+芋	i7	
+澦	i7	
+洩	i7	
+曳	i7	
+輿	i7	
+譽	i7	
+肄	i7	
+㑜	i7	
+裔	i7	
 未	bi7	
 味	bi7	
 寐	bi7	
@@ -10153,7 +10152,7 @@ import_tables:
 義	gi7	
 誼	gi7	
 議	gi7	
-語	gi7	0.1
+語	gi7	10%
 毅	gi7	
 御	gi7	
 遇	gi7	
@@ -10173,7 +10172,7 @@ import_tables:
 鳩	khiu1	
 樛	khiu1	
 𪓔	khiu1	1%
-虬	khiu1	0.1
+虬	khiu1	10%
 丢	tiu1	1%
 丟	tiu1	
 抽	thiu1	
@@ -10189,7 +10188,7 @@ import_tables:
 周	chhiu1	
 賙	chhiu1	
 州	chhiu1	
-洲	chiu1	
+洲	chhiu1	
 𥂕	chhiu1	
 啾	chhiu1	
 譸	chhiu1	
@@ -10199,15 +10198,15 @@ import_tables:
 收	siu1	
 羞	siu1	
 饈	siu1	
-憂	qiu1	
-優	qiu1	
-耰	qiu1	
-攸	qiu1	
-悠	qiu1	
-滺	qiu1	
-幽	qiu1	
-呦	qiu1	
-麀	qiu1	
+憂	iu1	
+優	iu1	
+耰	iu1	
+攸	iu1	
+悠	iu1	
+滺	iu1	
+幽	iu1	
+呦	iu1	
+麀	iu1	
 秋	chiu1	
 𪺋	chiu1	1%
 龝	chiu1	1%
@@ -10220,7 +10219,7 @@ import_tables:
 鰍	chiu1	
 休	hiu1	
 庥	hiu1	
-不	hiu1	0.1
+不	hiu1	10%
 咻	hiu1	
 貅	hiu1	
 鵂	hiu1	
@@ -10265,20 +10264,20 @@ import_tables:
 𩠐	siu2	1%
 手	siu2	
 糔	siu2	
-友	qiu2	
-㕛	qiu2	
-酉	qiu2	
-有	qiu2	
-丣	qiu2	1%
-佑	qiu2	
-莠	qiu2	
-誘	qiu2	
-羑	qiu2	
-卣	qiu2	
-槱	qiu2	
-懮	qiu2	
-䛻	qiu2	
-牖	qiu2	
+友	iu2	
+㕛	iu2	
+酉	iu2	
+有	iu2	
+丣	iu2	1%
+佑	iu2	
+莠	iu2	
+誘	iu2	
+羑	iu2	
+卣	iu2	
+槱	iu2	
+懮	iu2	
+䛻	iu2	
+牖	iu2	
 𨱯	biu2	
 侴	chiu2	
 醜	chiu2	
@@ -10312,8 +10311,8 @@ import_tables:
 鏽	siu3	
 銹	siu3	1%
 首	siu3	
-幼	qiu3	
-㓜	qiu3	1%
+幼	iu3	
+㓜	iu3	1%
 㑳	chiu3	
 臭	chiu3	
 甃	chiu3	
@@ -10342,8 +10341,8 @@ import_tables:
 求	kiu5	
 俅	kiu5	
 捄	kiu5	
-九	kiu5	0.1
-仇	kiu5	0.1
+九	kiu5	10%
+仇	kiu5	10%
 逑	kiu5	
 球	kiu5	
 絿	kiu5	
@@ -10369,7 +10368,7 @@ import_tables:
 柔	jiu5	
 渘	jiu5	
 鰇	jiu5	
-猱	jiu5	0.1
+猱	jiu5	10%
 揉	jiu5	
 䐓	jiu5	
 醻	siu5	1%
@@ -10387,27 +10386,27 @@ import_tables:
 魗	siu5	
 鯈	siu5	
 遒	siu5	
-攸	qiu5	
-游	qiu5	
-遊	qiu5	
-斿	qiu5	
-蝣	qiu5	
-𥯞	qiu5	
-尤	qiu5	
-肬	qiu5	
-訧	qiu5	
-郵	qiu5	
-由	qiu5	
-繇	qiu5	1%
-油	qiu5	
-柚	qiu5	0.1
-卣	qiu5	
-逌	qiu5	
-偤	qiu5	
-猶	qiu5	
-蝤	qiu5	1%
-輶	qiu5	
-莸	qiu5	
+攸	iu5	
+游	iu5	
+遊	iu5	
+斿	iu5	
+蝣	iu5	
+𥯞	iu5	
+尤	iu5	
+肬	iu5	
+訧	iu5	
+郵	iu5	
+由	iu5	
+繇	iu5	1%
+油	iu5	
+柚	iu5	10%
+卣	iu5	
+逌	iu5	
+偤	iu5	
+猶	iu5	
+蝤	iu5	1%
+輶	iu5	
+莸	iu5	
 繆	biu5	
 舊	kiu7	
 臼	kiu7	
@@ -10434,24 +10433,24 @@ import_tables:
 受	siu7	
 岫	siu7	
 袖	siu7	
-右	qiu7	
-祐	qiu7	1%
-佑	qiu7	
-又	qiu7	
-侑	qiu7	
-有	qiu7	
-囿	qiu7	
-宥	qiu7	
-栯	qiu7	
-賄	qiu7	
-鼬	qiu7	
-柚	qiu7	
-狖	qiu7	
-褎	qiu7	
+右	iu7	
+祐	iu7	1%
+佑	iu7	
+又	iu7	
+侑	iu7	
+有	iu7	
+囿	iu7	
+宥	iu7	
+栯	iu7	
+賄	iu7	
+鼬	iu7	
+柚	iu7	
+狖	iu7	
+褎	iu7	
 謬	biu7	
 繆	biu7	
 𩙷	giu7	
-復	hiu7	0.1
+復	hiu7	10%
 雅	genn2	
 彌	binn1	
 伱	linn2	1%
@@ -10469,8 +10468,8 @@ import_tables:
 妮	linn5	
 䛏	linn5	
 旎	linn5	
-女	linn7	0.1
-泥	linn7	0.1
+女	linn7	10%
+泥	linn7	10%
 𥻊	linn7	
 莅	linn7	
 涖	linn7	1%
@@ -10489,7 +10488,7 @@ import_tables:
 遮	chhe1	
 𨶶	se1	
 闍	se1	
-𦚢	qe1	
+𦚢	e1	
 姐	chhe2	
 者	chhe2	
 這	chhe2	
@@ -10498,7 +10497,7 @@ import_tables:
 嗻	chhe3	
 𠌳	ke5	
 瘸	ke5	
-𠴺	qainn1	
+𠴺	ainn1	
 乃	lainn2	
 廼	lainn2	1%
 逎	lainn2	1%
@@ -10593,7 +10592,7 @@ import_tables:
 皃	baunn7	1%
 䫉	baunn7	1%
 㑤	baunn7	
-樂	gaunn7	0.1
+樂	gaunn7	10%
 藕	gaunn7	
 訶	honn1	
 薅	honn1	
@@ -10646,4 +10645,8 @@ import_tables:
 𢝌	bonn7	
 芼	bonn7	
 牛	giunn5	
-䒜	giunn5
+䒜	giunn5	
+#   詞語
+雅俗通		
+十五音		
+謝秀嵐		
