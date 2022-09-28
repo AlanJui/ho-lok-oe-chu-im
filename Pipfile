@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 xlwings = "*"
+pandas = "*"
+numpy = "*"
 
 [dev-packages]
 
