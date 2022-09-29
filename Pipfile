@@ -7,6 +7,8 @@ name = "pypi"
 xlwings = "*"
 pandas = "*"
 numpy = "*"
+psycopg = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
