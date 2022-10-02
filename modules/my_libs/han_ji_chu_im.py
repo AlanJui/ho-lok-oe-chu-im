@@ -141,6 +141,20 @@ def get_sip_ngoo_im_chu_im(siann_idx, un_idx, tiau_ho):
 # ==========================================================
 
 
+TPS_mapping_dict = {
+    'p': 'ㆴ˙',
+    't': 'ㆵ˙',
+    'k': 'ㆻ˙',
+    'h': 'ㆷ˙',
+}
+
+TPS_remap_dict = {
+    'ㄗㄧ': 'ㄐㄧ',
+    'ㄘㄧ': 'ㄑㄧ',
+    'ㄙㄧ': 'ㄒㄧ',
+    'ㆡㄧ': 'ㆢㄧ',
+}
+
 TPS_tiau_dict = {
     1: "",
     2: "ˋ",
@@ -166,7 +180,16 @@ def get_TPS_chu_im(siann_idx, un_idx, tiau_ho):
     sni_tiau = get_TPS_tiau_ho(int(tiau_ho))
     sni_siann = get_TPS_siann_bu(siann_idx)
 
-    return (f"{sni_siann}{sni_un}{sni_tiau}")
+    TPS_chu_im = f"{sni_siann}{sni_un}{sni_tiau}"
+
+    pattern = r"(ㄗㄧ|ㄘㄧ|ㄙㄧ|ㆡㄧ)"
+    searchObj = re.search(pattern, TPS_chu_im, re.M | re.I)
+    if searchObj:
+        key_value = searchObj.group(1)
+        TPS_chu_im = TPS_chu_im.replace(key_value,
+                                        TPS_remap_dict[key_value])
+
+    return TPS_chu_im
 
 
 # %%
@@ -191,3 +214,28 @@ print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 十五音注音：{sni_un
 
 TPS_chu_im = get_TPS_chu_im(idx1, idx2, tiau_ho)
 print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 卜音注音：{TPS_chu_im}")
+
+# %%
+"""
+方音符號測試案例
+"""
+han_ji = "相"
+chu_im = "siong1"
+result = split_chu_im(chu_im)
+
+siann_bu = result[0]    # siann
+un_bu = result[1]    # un
+tiau_ho = result[2]   # tiau
+
+siann_idx = get_siann_idx(siann_bu)
+un_idx = get_un_idx(un_bu)
+sip_ngoo_im_idx = get_sip_ngoo_im_idx(un_idx)
+
+sni_un = get_sip_ngoo_im_un_bu(un_idx)
+sni_tiau = get_sip_ngoo_im_tiau_ho(int(tiau_ho))
+sni_siann = get_sip_ngoo_im_siann_bu(siann_idx)
+
+TPS_chu_im = get_TPS_chu_im(siann_idx, un_idx, tiau_ho)
+print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 方音注音：{TPS_chu_im}")
+
+# %%
