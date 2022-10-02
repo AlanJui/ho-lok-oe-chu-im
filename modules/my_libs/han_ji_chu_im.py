@@ -104,8 +104,75 @@ def convert_string_to_list(string):
 
 
 # %%
+# ==========================================================
+# 十五音注音
+# ==========================================================
+
+sip_ngoo_im_tiau_dict = {
+    1: "一",
+    2: "二",
+    3: "三",
+    4: "四",
+    5: "五",
+    7: "七",
+    8: "八",
+}
+
+def get_sip_ngoo_im_un_bu(idx):
+    # return df_un_bu["sip_ngoo_im"].values.tolist()[idx]
+    return df_un_bu["sip_ngoo_im"][idx]
+
+def get_sip_ngoo_im_siann_bu(idx):
+    return df_siann_bu["sip_ngoo_im"][idx]
+
+def get_sip_ngoo_im_tiau_ho(idx):
+    return sip_ngoo_im_tiau_dict[idx]
+
+def get_sip_ngoo_im_chu_im(siann_idx, un_idx, tiau_ho):
+    sni_un = get_sip_ngoo_im_un_bu(un_idx)
+    sni_tiau = get_sip_ngoo_im_tiau_ho(int(tiau_ho))
+    sni_siann = get_sip_ngoo_im_siann_bu(siann_idx)
+
+    return (f"{sni_un}{sni_tiau}{sni_siann}")
+
+# %%
+# ==========================================================
+# 方音符號
+# ==========================================================
+
+
+TPS_tiau_dict = {
+    1: "",
+    2: "ˋ",
+    3: "˪",
+    4: "",
+    5: "ˊ",
+    7: "˫",
+    8: "\u02D9",
+}
+
+def get_TPS_un_bu(idx):
+    # return df_un_bu["TPS"].values.tolist()[idx]
+    return df_un_bu["TPS"][idx]
+
+def get_TPS_siann_bu(idx):
+    return df_siann_bu["TPS"][idx]
+
+def get_TPS_tiau_ho(idx):
+    return TPS_tiau_dict[idx]
+
+def get_TPS_chu_im(siann_idx, un_idx, tiau_ho):
+    sni_un = get_TPS_un_bu(un_idx)
+    sni_tiau = get_TPS_tiau_ho(int(tiau_ho))
+    sni_siann = get_TPS_siann_bu(siann_idx)
+
+    return (f"{sni_siann}{sni_un}{sni_tiau}")
+
+
+# %%
 # chu_im = "nga2"
 # chu_im = "chhian5"
+han_ji = "昧"
 chu_im = "boenn2"
 result = split_chu_im(chu_im)
 
@@ -116,3 +183,11 @@ tiau_ho = result[2]   # tiau
 idx1 = get_siann_idx(siann_bu)
 idx2 = get_un_idx(un_bu)
 idx3 = get_sip_ngoo_im_idx(idx2)
+
+sni_un = get_sip_ngoo_im_un_bu(idx2)
+sni_tiau = get_sip_ngoo_im_tiau_ho(int(tiau_ho))
+sni_siann = get_sip_ngoo_im_siann_bu(idx1)
+print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 十五音注音：{sni_un}{sni_tiau}{sni_siann}")
+
+TPS_chu_im = get_TPS_chu_im(idx1, idx2, tiau_ho)
+print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 卜音注音：{TPS_chu_im}")
