@@ -137,7 +137,7 @@ def get_sip_ngoo_im_chu_im(siann_idx, un_idx, tiau_ho):
 
 # %%
 # ==========================================================
-# 方音符號
+# 方音符號(TPS)
 # ==========================================================
 
 
@@ -193,6 +193,121 @@ def get_TPS_chu_im(siann_idx, un_idx, tiau_ho):
 
 
 # %%
+"""
+白話字（POJ）
+順序：《o＞e＞a＞u＞i＞ng＞m》；而 ng 標示在字母 n 上。
+例外
+oai、oan、oat、oah 標在 a 上。
+oeh 標在 e 上。
+
+"""
+pattern1 = r"(oai|oan|oah|oeh)"
+pattern2 = r"(o|e|a|u|i|ng|m)"
+
+POJ_tiau_dict = {
+    'a1': 'a',
+    'a2': 'á',
+    'a3': 'à',
+    'a4': 'a',
+    'a5': 'â',
+    'a7': 'ā',
+    'a8': 'a̍',
+    'e1': 'e',
+    'e2': 'é',
+    'e3': 'è',
+    'e4': 'e',
+    'e5': 'ê',
+    'e7': 'ē',
+    'e8': 'e̍',
+    'i1': 'i',
+    'i2': 'í',
+    'i3': 'ì',
+    'i4': 'i',
+    'i5': 'î',
+    'i7': 'ī',
+    'i8': 'i̍',
+    'o1': 'o',
+    'o2': 'ó',
+    'o3': 'ò',
+    'o4': 'o',
+    'o5': 'ô',
+    'o7': 'ō',
+    'o8': 'o̍',
+    'u1': 'u',
+    'u2': 'ú',
+    'u3': 'ù',
+    'u4': 'u',
+    'u5': 'û',
+    'u7': 'ū',
+    'u8': 'u̍',
+    'n1': 'u',
+    'n2': 'ú',
+    'n3': 'ù',
+    'n4': 'u',
+    'n5': 'û',
+    'n7': 'ū',
+    'n8': 'u̍',
+    'n1': 'u',
+    'n2': 'ú',
+    'n3': 'ù',
+    'n4': 'u',
+    'n5': 'û',
+    'n7': 'ū',
+    'u8': 'u̍',
+    'n1': 'n',
+    'n2': 'ń',
+    'n3': 'ǹ',
+    'n4': 'n',
+    'n5': 'n̂',
+    'n7': 'n̄',
+    'n8': 'n̍',
+    'm1': 'm',
+    'm2': 'ḿ',
+    'm3': 'm̀',
+    'm4': 'm',
+    'm5': 'm̌',
+    'm7': 'm̄',
+    'm8': 'm̍',
+}
+
+def get_POJ_un_bu(idx):
+    return df_un_bu["POJ"][idx]
+
+def get_POJ_siann_bu(idx):
+    return df_siann_bu["POJ"][idx]
+
+def get_POJ_tiau_ho(goan_im, idx):
+    goan_im_idx = f"{goan_im}{idx}"
+    return POJ_tiau_dict[goan_im_idx]
+
+def get_POJ_chu_im(siann_idx, un_idx, tiau):
+    un = get_POJ_un_bu(un_idx)
+    siann = get_POJ_siann_bu(siann_idx)
+
+    POJ_chu_im = f"{siann}{un}"
+
+    # pattern1 = r"(oai|oan|oah|oeh)"
+    searchObj = re.search(pattern1, POJ_chu_im, re.M | re.I)
+    if searchObj:
+        goan_im = searchObj.group(1)[1]
+        POJ_chu_im = POJ_chu_im.replace(goan_im,
+                                        get_POJ_tiau_ho(goan_im, tiau))
+    else:
+        # pattern2 = r"(o|e|a|u|i|ng|m)"
+        searchObj2 = re.search(pattern2, POJ_chu_im, re.M | re.I)
+        if searchObj2:
+            goan_im = searchObj2.group(1)
+            if goan_im != "ng":
+                POJ_chu_im = POJ_chu_im.replace(goan_im,
+                                                get_POJ_tiau_ho(goan_im, tiau))
+            else:
+                POJ_chu_im = POJ_chu_im.replace("n",
+                                                get_POJ_tiau_ho(goan_im, tiau))
+
+    return POJ_chu_im
+
+
+# %%
 # chu_im = "nga2"
 # chu_im = "chhian5"
 han_ji = "昧"
@@ -231,11 +346,24 @@ siann_idx = get_siann_idx(siann_bu)
 un_idx = get_un_idx(un_bu)
 sip_ngoo_im_idx = get_sip_ngoo_im_idx(un_idx)
 
-sni_un = get_sip_ngoo_im_un_bu(un_idx)
-sni_tiau = get_sip_ngoo_im_tiau_ho(int(tiau_ho))
-sni_siann = get_sip_ngoo_im_siann_bu(siann_idx)
-
 TPS_chu_im = get_TPS_chu_im(siann_idx, un_idx, tiau_ho)
 print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 方音注音：{TPS_chu_im}")
 
 # %%
+"""
+白話字測試案例
+"""
+han_ji = "南"
+chu_im = "lam5"
+result = split_chu_im(chu_im)
+
+siann_bu = result[0]    # siann
+un_bu = result[1]    # un
+tiau_ho = result[2]   # tiau
+
+siann_idx = get_siann_idx(siann_bu)
+un_idx = get_un_idx(un_bu)
+sip_ngoo_im_idx = get_sip_ngoo_im_idx(un_idx)
+
+POJ_chu_im = get_POJ_chu_im(siann_idx, un_idx, tiau_ho)
+print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 白話字拼音：{POJ_chu_im}")
