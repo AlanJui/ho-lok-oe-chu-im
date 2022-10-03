@@ -71,13 +71,13 @@ def get_sip_ngoo_im_idx(un_bu_index):
 # 聲母處理
 # ==========================================================
 siann_bu_dict = {
-    'siann_code': ['b', 'ch', 'chh', 'g', 'h', 'j', 'k', 'kh', 'l', 'm', 'n', 'ng', 'p', 'ph', 's', 't', 'th'],
-    'IPA': ['b', 'ʦ', 'ʦʰ', 'ɡ', 'h', 'ʣ', 'k', 'kʰ', 'l', 'm', 'n', 'ŋ', 'p', 'pʰ', 's', 't', 'tʰ'],
-    'sip_ngoo_im': ['門', '曾', '出', '語', '喜', '入', '求', '去', '柳', '毛', '耐', '雅', '邊', '頗', '時', '地', '他'],
-    'POJ': ['b', 'ch', 'chh', 'g', 'h', 'j', 'k', 'kh', 'l', 'm', 'n', 'ng', 'p', 'ph', 's', 't', ' '],
-    'TL': ['b', 'ts', 'tsh', 'g', 'h', 'j', 'k', 'kh', 'l', 'm', 'n', 'ng', 'p', 'ph', 's', 't', 'th'],
-    'BP': ['bb', 'z', 'c', 'gg', 'h', 'zz', 'g', 'k', 'l', 'bbn', 'ln', 'ggn', 'b', 'p', 's', 'd', 't'],
-    'TPS': ['ㆠ', 'ㄗ', 'ㄘ', 'ㆣ', 'ㄏ', 'ㆡ', 'ㄍ', 'ㄎ', 'ㄌ', 'ㄇ', 'ㄋ', 'ㄫ', 'ㄅ', 'ㄆ', 'ㄙ', 'ㄉ', 'ㄊ'],
+    'siann_code': ['b', 'ch', 'chh', 'g', 'h', 'j', 'k', 'kh', 'l', 'm', 'n', 'ng', 'p', 'ph', 's', 't', 'th', 'q'],
+    'IPA': ['b', 'ʦ', 'ʦʰ', 'ɡ', 'h', 'ʣ', 'k', 'kʰ', 'l', 'm', 'n', 'ŋ', 'p', 'pʰ', 's', 't', 'tʰ', ' '],
+    'sip_ngoo_im': ['門', '曾', '出', '語', '喜', '入', '求', '去', '柳', '毛', '耐', '雅', '邊', '頗', '時', '地', '他', '英'],
+    'POJ': ['b', 'ch', 'chh', 'g', 'h', 'j', 'k', 'kh', 'l', 'm', 'n', 'ng', 'p', 'ph', 's', 't', 'th', ' '],
+    'TL': ['b', 'ts', 'tsh', 'g', 'h', 'j', 'k', 'kh', 'l', 'm', 'n', 'ng', 'p', 'ph', 's', 't', 'th', ' '],
+    'BP': ['bb', 'z', 'c', 'gg', 'h', 'zz', 'g', 'k', 'l', 'bbn', 'ln', 'ggn', 'b', 'p', 's', 'd', 't', ' '],
+    'TPS': ['ㆠ', 'ㄗ', 'ㄘ', 'ㆣ', 'ㄏ', 'ㆡ', 'ㄍ', 'ㄎ', 'ㄌ', 'ㄇ', 'ㄋ', 'ㄫ', 'ㄅ', 'ㄆ', 'ㄙ', 'ㄉ', 'ㄊ', ' '],
 }
 df_siann_bu = pd.DataFrame(siann_bu_dict)
 
@@ -199,7 +199,6 @@ def get_TPS_chu_im(siann_idx, un_idx, tiau_ho):
 例外
 oai、oan、oat、oah 標在 a 上。
 oeh 標在 e 上。
-
 """
 pattern1 = r"(oai|oan|oah|oeh)"
 pattern2 = r"(o|e|a|u|i|ng|m)"
@@ -308,6 +307,255 @@ def get_POJ_chu_im(siann_idx, un_idx, tiau):
 
 
 # %%
+"""
+閩拼（BP）
+
+【調號標示規則】
+
+當一個音節有多個字母時，調號得標示在響度最大的字母上面（通常在韻腹）。由規則可以判定確切的字母：
+
+ - 響度優先順序： a > oo > (e = o) > (i = u)〈低元音 > 高元音 > 無擦通音 > 擦音 > 塞音〉
+ - 二合字母 iu 及 ui ，調號都標在後一個字母上；因為前一個字母是介音。
+ - m 作韻腹時則標於字母 m 上。
+ - 二合字母 oo 及 ng，標於前一個字母上；比如 ng 標示在字母 n 上。
+ - 三合字母 ere，標於最後的字母 e 上。
+"""
+
+# 將「傳統八聲調」轉換成閩拼使用的調號
+BP_tiau_remap_dict = {
+    1: 1,  # 陰平: 44
+    2: 3,  # 上聲：53
+    3: 5,  # 陰去：21
+    4: 7,  # 上聲：53
+    5: 2,  # 陽平：24
+    7: 6,  # 陰入：3?
+    8: 8,  # 陽入：4?
+}
+
+pattern = r"[a|oo|ere|(iu|ui)|(e|o)|(i|u)|ng|m]"
+
+BP_tiau_hu_dict = {
+    1: "\u0304",    # 陰平
+    2: "\u0341",    # 陽平
+    3: "\u030C",    # 上声
+    5: "\u0340",    # 陰去
+    6: "\u0302",    # 陽去
+    7: "\u0304",    # 陰入
+    8: "\u0341",    # 陽入
+}
+
+BP_tiau_dict = {
+    'a1': 'ā',
+    'a2': 'á',
+    'a3': 'ǎ',
+    'a5': 'à',
+    'a6': 'â',
+    'a7': 'ā',
+    'a8': 'á',
+    'e1': 'ē',
+    'e2': 'é',
+    'e3': 'ě',
+    'e5': 'è',
+    'e6': 'ê',
+    'e7': 'ē',
+    'e8': 'é',
+    'i1': 'ī',
+    'i2': 'í',
+    'i3': 'ǐ',
+    'i5': 'ì',
+    'i6': 'î',
+    'i7': 'ī',
+    'i8': 'í',
+    'o1': 'ō',
+    'o2': 'ó',
+    'o3': 'ǒ',
+    'o5': 'ò',
+    'o6': 'ô',
+    'o7': 'ō',
+    'o8': 'ó',
+    'u1': 'ū',
+    'u2': 'ú',
+    'u3': 'ǔ',
+    'u5': 'ù',
+    'u6': 'û',
+    'u7': 'ū',
+    'u8': 'ú',
+    'n1': 'n̄',
+    'n2': 'ń',
+    'n3': 'ň',
+    'n5': 'ǹ',
+    'n6': 'n̂',
+    'n7': 'n̄',
+    'n8': 'ń',
+    'm1': 'm̄',
+    'm2': 'ḿ',
+    'm3': 'm̌',
+    'm5': 'm̀',
+    'm6': 'm̂',
+    'm7': 'm̄',
+    'm8': 'ḿ',
+}
+
+def get_BP_un_bu(idx):
+    return df_un_bu["BP"][idx]
+
+def get_BP_siann_bu(idx):
+    return df_siann_bu["BP"][idx]
+
+def get_BP_tiau_remap(tiau_ho):
+    return BP_tiau_remap_dict[int(tiau_ho)]
+
+def get_BP_tiau_hu(goan_im, BP_tiau):
+    goan_im_idx = f"{goan_im}{BP_tiau}"
+    return BP_tiau_dict[goan_im_idx]
+
+def get_BP_chu_im_simple(siann_idx, un_idx, tiau):
+    un = get_BP_un_bu(un_idx)
+    siann = get_BP_siann_bu(siann_idx)
+    # 將「傳統八聲調」轉換成閩拼使用的調號
+    BP_tiau = get_BP_tiau_remap(tiau)
+
+    BP_chu_im = f"{siann}{un}{BP_tiau}"
+
+    return BP_chu_im
+
+def get_BP_chu_im(siann_idx, un_idx, tiau):
+    un = get_BP_un_bu(un_idx)
+    siann = get_BP_siann_bu(siann_idx)
+    # 將「傳統八聲調」轉換成閩拼使用的調號
+    BP_tiau = get_BP_tiau_remap(int(tiau))
+
+    BP_chu_im = f"{siann}{un}"
+
+    # pattern = r"[a|oo|ere|(iu|ui)|(e|o)|(i|u)|ng|m]"
+    searchObj = re.search(pattern, BP_chu_im, re.M | re.I)
+    if searchObj:
+        found = searchObj.group(1)
+        if found == "iu":
+            BP_chu_im = BP_chu_im.replace("u", get_BP_tiau_hu(found, BP_tiau))
+        elif found == "ui":
+            BP_chu_im = BP_chu_im.replace("i", get_BP_tiau_hu(found, BP_tiau))
+        elif found == "oo":
+            tiau_hu = get_BP_tiau_hu("o", BP_tiau)
+            to_be_replaced = f"o{tiau_hu}"
+            BP_chu_im = BP_chu_im.replace(found, to_be_replaced)
+        elif found == "ere":
+            tiau_hu = get_BP_tiau_hu("e", BP_tiau)
+            to_be_replaced = f"er{tiau_hu}"
+            BP_chu_im = BP_chu_im.replace(found, to_be_replaced)
+        elif found == "ng":
+            tiau_hu = get_BP_tiau_hu("n", BP_tiau)
+            to_be_replaced = f"{tiau_hu}g"
+            BP_chu_im = BP_chu_im.replace(found, to_be_replaced)
+        else:
+            BP_chu_im = BP_chu_im.replace(found, get_BP_tiau_hu(found, BP_tiau))
+
+    return BP_chu_im
+
+
+# %%
+"""
+羅馬拼音（TL）
+順序：《o＞e＞a＞u＞i＞ng＞m》；而 ng 標示在字母 n 上。
+"""
+pattern = r"(o|e|a|u|i|ng|m)"
+
+TL_tiau_dict = {
+    'a1': 'a',
+    'a2': 'á',
+    'a3': 'à',
+    'a4': 'a',
+    'a5': 'â',
+    'a7': 'ā',
+    'a8': 'a̍',
+    'e1': 'e',
+    'e2': 'é',
+    'e3': 'è',
+    'e4': 'e',
+    'e5': 'ê',
+    'e7': 'ē',
+    'e8': 'e̍',
+    'i1': 'i',
+    'i2': 'í',
+    'i3': 'ì',
+    'i4': 'i',
+    'i5': 'î',
+    'i7': 'ī',
+    'i8': 'i̍',
+    'o1': 'o',
+    'o2': 'ó',
+    'o3': 'ò',
+    'o4': 'o',
+    'o5': 'ô',
+    'o7': 'ō',
+    'o8': 'o̍',
+    'u1': 'u',
+    'u2': 'ú',
+    'u3': 'ù',
+    'u4': 'u',
+    'u5': 'û',
+    'u7': 'ū',
+    'u8': 'u̍',
+    'n1': 'u',
+    'n2': 'ú',
+    'n3': 'ù',
+    'n4': 'u',
+    'n5': 'û',
+    'n7': 'ū',
+    'n8': 'u̍',
+    'n1': 'u',
+    'n2': 'ú',
+    'n3': 'ù',
+    'n4': 'u',
+    'n5': 'û',
+    'n7': 'ū',
+    'u8': 'u̍',
+    'n1': 'n',
+    'n2': 'ń',
+    'n3': 'ǹ',
+    'n4': 'n',
+    'n5': 'n̂',
+    'n7': 'n̄',
+    'n8': 'n̍',
+    'm1': 'm',
+    'm2': 'ḿ',
+    'm3': 'm̀',
+    'm4': 'm',
+    'm5': 'm̌',
+    'm7': 'm̄',
+    'm8': 'm̍',
+}
+
+def get_TL_un_bu(idx):
+    return df_un_bu["TL"][idx]
+
+def get_TL_siann_bu(idx):
+    return df_siann_bu["TL"][idx]
+
+def get_TL_tiau_ho(goan_im, idx):
+    goan_im_idx = f"{goan_im}{idx}"
+    return TL_tiau_dict[goan_im_idx]
+
+def get_TL_chu_im(siann_idx, un_idx, tiau):
+    un = get_TL_un_bu(un_idx)
+    siann = get_TL_siann_bu(siann_idx)
+
+    TL_chu_im = f"{siann}{un}"
+
+    # pattern = r"(o|e|a|u|i|ng|m)"
+    searchObj = re.search(pattern, TL_chu_im, re.M | re.I)
+    if searchObj:
+        goan_im = searchObj.group(1)
+        if goan_im != "ng":
+            TL_chu_im = TL_chu_im.replace(goan_im,
+                                          get_TL_tiau_ho(goan_im, tiau))
+        else:
+            TL_chu_im = TL_chu_im.replace("n",
+                                          get_TL_tiau_ho(goan_im, tiau))
+    return TL_chu_im
+
+
+# %%
 # chu_im = "nga2"
 # chu_im = "chhian5"
 han_ji = "昧"
@@ -367,3 +615,63 @@ sip_ngoo_im_idx = get_sip_ngoo_im_idx(un_idx)
 
 POJ_chu_im = get_POJ_chu_im(siann_idx, un_idx, tiau_ho)
 print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 白話字拼音：{POJ_chu_im}")
+
+# %%
+"""
+羅馬拼音測試案例
+"""
+han_ji_dict = {
+    "鏢": "pio1",
+    "語": "gi2",
+    "欠": "khiam3",
+    "德": "tek4",
+    "元": "goan5",
+    "字": "ji7",
+    "俗": "siok8",
+}
+
+for han_ji in han_ji_dict:
+    chu_im = han_ji_dict[han_ji]
+    result = split_chu_im(chu_im)
+
+    siann_bu = result[0]    # siann
+    un_bu = result[1]    # un
+    tiau_ho = result[2]   # tiau
+
+    siann_idx = get_siann_idx(siann_bu)
+    un_idx = get_un_idx(un_bu)
+    sip_ngoo_im_idx = get_sip_ngoo_im_idx(un_idx)
+
+    TL_chu_im = get_TL_chu_im(siann_idx, un_idx, tiau_ho)
+    print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 羅馬拼音：{TL_chu_im}")
+
+# %%
+"""
+閩拼測試案例
+"""
+han_ji_dict = {
+    "鏢": "pio1",
+    "語": "gi2",
+    "欠": "khiam3",
+    "德": "tek4",
+    "元": "goan5",
+    "字": "ji7",
+    "俗": "siok8",
+    "聲": "siann1",
+    "生": "chhinn1"
+}
+
+for han_ji in han_ji_dict:
+    chu_im = han_ji_dict[han_ji]
+    result = split_chu_im(chu_im)
+
+    siann_bu = result[0]    # siann
+    un_bu = result[1]    # un
+    tiau_ho = result[2]   # tiau
+
+    siann_idx = get_siann_idx(siann_bu)
+    un_idx = get_un_idx(un_bu)
+
+    # BP_chu_im = get_BP_chu_im_simple(siann_idx, un_idx, tiau_ho)
+    BP_chu_im = get_BP_chu_im(siann_idx, un_idx, tiau_ho)
+    print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 閩拼：{BP_chu_im}")
