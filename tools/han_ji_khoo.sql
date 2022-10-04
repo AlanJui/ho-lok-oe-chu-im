@@ -6,5 +6,8 @@ CREATE TABLE han_ji (
   siann VARCHAR(3),
   un VARCHAR(5),
   tiau INTEGER,
+  old_chu_im VARCHAR(15),
+  sni_siann VARCHAR(3),
+  sni_un VARCHAR(5),
   PRIMARY KEY (id)
 )
