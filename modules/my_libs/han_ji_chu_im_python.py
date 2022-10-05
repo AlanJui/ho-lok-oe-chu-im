@@ -106,9 +106,62 @@ def convert_string_to_list(string):
 
 
 # %%
-# ==========================================================
-# 十五音注音
-# ==========================================================
+"""
+十五音注音
+"""
+
+sip_ngoo_im_un_bu_2_un_code_dict = {
+    '君': ['un', 'ut'],
+    '堅': ['ian', 'iat'],
+    '金': ['im', 'ip'],
+    '規': ['ui', 'uih'],
+    '嘉': ['ee', 'eeh'],
+    '干': ['an', 'at'],
+    '公': ['ong', 'ok'],
+    '乖': ['oai', 'oaih'],
+    '經': ['eng', 'ek'],
+    '觀': ['oan', 'oat'],
+    '沽': ['oo', 'ooh'],
+    '嬌': ['iau', 'iauh'],
+    '稽': ['ei', 'eih'],
+    '恭': ['iong', 'iok'],
+    '高': ['o', 'oh'],
+    '皆': ['ai', 'aih'],
+    '巾': ['in', 'it'],
+    '姜': ['iang', 'iak'],
+    '甘': ['am', 'ap'],
+    '瓜': ['oa', 'oah'],
+    '江': ['ang', 'ak'],
+    '兼': ['iam', 'iap'],
+    '交': ['au', 'auh'],
+    '迦': ['ia', 'iah'],
+    '檜': ['oe', 'oeh'],
+    '監': ['ann', 'ahnn'],
+    '艍': ['u', 'uh'],
+    '膠': ['a', 'ah'],
+    '居': ['i', 'ih'],
+    '丩': ['iu', 'iuh'],
+    '更': ['enn', 'ehnn'],
+    '褌': ['uinn', 'uinnh'],
+    '茄': ['io', 'ioh'],
+    '梔': ['inn', 'ihnn'],
+    '薑': ['ionn', 'ionnh'],
+    '驚': ['iann', 'iannh'],
+    '官': ['oann', 'oannh'],
+    '鋼': ['ng', 'ngh'],
+    '伽': ['e', 'eh'],
+    '閒': ['ainn', 'ainnh'],
+    '姑': ['onn', 'onnh'],
+    '姆': ['m', 'mh'],
+    '光': ['oang', 'oak'],
+    '閂': ['oainn', 'oaihnn'],
+    '糜': ['oenn', 'oennh'],
+    '嘄': ['iaunn', 'iauhnn'],
+    '箴': ['om', 'op'],
+    '爻': ['aunn', 'aunnh'],
+    '扛': ['onn', 'ohnn'],
+    '牛': ['iunn', 'iunnh'],
+}
 
 sip_ngoo_im_tiau_dict = {
     1: "一",
@@ -135,9 +188,14 @@ def get_siann_code_by_siann_bu(sian_bu):
     index = sip_ngoo_im_siann_bu.index(sian_bu)
     return siann_list[index]
 
-def get_un_code_by_un_bu(un_bu):
-    index = sip_ngoo_im_un_bu.index(un_bu)
-    return un_list[index]
+def get_un_code_by_un_bu(un_bu, tiau):
+    if tiau == 4 or tiau == 8:
+        # 韻母為入聲韻
+        un_bu_code = sip_ngoo_im_un_bu_2_un_code_dict[un_bu][1]
+    else:
+        # 韻母為舒聲韻
+        un_bu_code = sip_ngoo_im_un_bu_2_un_code_dict[un_bu][0]
+    return un_bu_code
 
 def convert_trandication_tiau(tiau):
     return sip_ngoo_im_trandication_tiau_dict[tiau]
@@ -159,11 +217,11 @@ def get_sip_ngoo_im_chu_im(siann_idx, un_idx, tiau_ho):
 
     return (f"{sni_un}{sni_tiau}{sni_siann}")
 
-# %%
-# ==========================================================
-# 方音符號(TPS)
-# ==========================================================
 
+# %%
+"""
+方音符號(TPS)
+"""
 
 TPS_mapping_dict = {
     'p': 'ㆴ˙',
@@ -577,148 +635,3 @@ def get_TL_chu_im(siann_idx, un_idx, tiau):
             TL_chu_im = TL_chu_im.replace("n",
                                           get_TL_tiau_ho(goan_im, tiau))
     return TL_chu_im
-
-
-# %%
-# chu_im = "nga2"
-# chu_im = "chhian5"
-han_ji = "昧"
-chu_im = "boenn2"
-result = split_chu_im(chu_im)
-
-siann_bu = result[0]    # siann
-un_bu = result[1]    # un
-tiau_ho = result[2]   # tiau
-
-idx1 = get_siann_idx(siann_bu)
-idx2 = get_un_idx(un_bu)
-idx3 = get_sip_ngoo_im_idx(idx2)
-
-sni_un = get_sip_ngoo_im_un_bu(idx2)
-sni_tiau = get_sip_ngoo_im_tiau_ho(int(tiau_ho))
-sni_siann = get_sip_ngoo_im_siann_bu(idx1)
-print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 十五音注音：{sni_un}{sni_tiau}{sni_siann}")
-
-TPS_chu_im = get_TPS_chu_im(idx1, idx2, tiau_ho)
-print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 卜音注音：{TPS_chu_im}")
-
-# %%
-"""
-方音符號測試案例
-"""
-han_ji = "相"
-chu_im = "siong1"
-result = split_chu_im(chu_im)
-
-siann_bu = result[0]    # siann
-un_bu = result[1]    # un
-tiau_ho = result[2]   # tiau
-
-siann_idx = get_siann_idx(siann_bu)
-un_idx = get_un_idx(un_bu)
-sip_ngoo_im_idx = get_sip_ngoo_im_idx(un_idx)
-
-TPS_chu_im = get_TPS_chu_im(siann_idx, un_idx, tiau_ho)
-print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 方音注音：{TPS_chu_im}")
-
-# %%
-"""
-白話字測試案例
-"""
-han_ji = "南"
-chu_im = "lam5"
-result = split_chu_im(chu_im)
-
-siann_bu = result[0]    # siann
-un_bu = result[1]    # un
-tiau_ho = result[2]   # tiau
-
-siann_idx = get_siann_idx(siann_bu)
-un_idx = get_un_idx(un_bu)
-sip_ngoo_im_idx = get_sip_ngoo_im_idx(un_idx)
-
-POJ_chu_im = get_POJ_chu_im(siann_idx, un_idx, tiau_ho)
-print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 白話字拼音：{POJ_chu_im}")
-
-# %%
-"""
-羅馬拼音測試案例
-"""
-han_ji_dict = {
-    "鏢": "pio1",
-    "語": "gi2",
-    "欠": "khiam3",
-    "德": "tek4",
-    "元": "goan5",
-    "字": "ji7",
-    "俗": "siok8",
-}
-
-for han_ji in han_ji_dict:
-    chu_im = han_ji_dict[han_ji]
-    result = split_chu_im(chu_im)
-
-    siann_bu = result[0]    # siann
-    un_bu = result[1]    # un
-    tiau_ho = result[2]   # tiau
-
-    siann_idx = get_siann_idx(siann_bu)
-    un_idx = get_un_idx(un_bu)
-    sip_ngoo_im_idx = get_sip_ngoo_im_idx(un_idx)
-
-    TL_chu_im = get_TL_chu_im(siann_idx, un_idx, tiau_ho)
-    print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 羅馬拼音：{TL_chu_im}")
-
-# %%
-"""
-閩拼測試案例
-"""
-han_ji_dict = {
-    "鏢": "pio1",
-    "語": "gi2",
-    "欠": "khiam3",
-    "德": "tek4",
-    "元": "goan5",
-    "字": "ji7",
-    "俗": "siok8",
-    "聲": "siann1",
-    "生": "chhinn1"
-}
-
-for han_ji in han_ji_dict:
-    chu_im = han_ji_dict[han_ji]
-    result = split_chu_im(chu_im)
-
-    siann_bu = result[0]    # siann
-    un_bu = result[1]    # un
-    tiau_ho = result[2]   # tiau
-
-    siann_idx = get_siann_idx(siann_bu)
-    un_idx = get_un_idx(un_bu)
-
-    # BP_chu_im = get_BP_chu_im_simple(siann_idx, un_idx, tiau_ho)
-    BP_chu_im = get_BP_chu_im(siann_idx, un_idx, tiau_ho)
-    print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 閩拼：{BP_chu_im}")
-
-# %%
-"""
-十五音轉碼測試案例
-"""
-han_ji_dict = {
-    "妃": ["喜", "規", "上平"],
-    "偉": ["英", "規", "上上"],
-    "創": ["出", "公", "上去"],
-    "托": ["他", "公", "上入"],
-    "樂": ["語", "江", "下入"],
-}
-
-for han_ji in han_ji_dict:
-    siann_bu = han_ji_dict[han_ji][0]
-    un_bu = han_ji_dict[han_ji][1]
-    tiau_ho = han_ji_dict[han_ji][2]
-
-    siann_code = get_siann_code_by_siann_bu(siann_bu)
-    un_code = get_un_code_by_un_bu(un_bu)
-    tiau_code = convert_trandication_tiau(tiau_ho)
-
-    print(f"漢字：{han_ji} / 聲碼：{siann_bu} --> {siann_code} / 韻碼：{un_bu} --> {un_code} / 調號：{tiau_ho} --> {tiau_code}")

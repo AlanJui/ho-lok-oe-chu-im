@@ -9,6 +9,7 @@ pandas = "*"
 numpy = "*"
 psycopg = "*"
 psycopg2-binary = "*"
+import-ipynb = "*"
 
 [dev-packages]
 
