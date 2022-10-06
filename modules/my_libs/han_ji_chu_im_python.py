@@ -43,6 +43,16 @@ un_list = df_un_bu["un_code"].values.tolist()
 sip_ngoo_im_un_bu_list = df_un_bu["sip_ngoo_im_id"].values.tolist()
 sip_ngoo_im_un_bu = df_un_bu["sip_ngoo_im"].values.tolist()
 
+tiau_hu_dict = {
+    1: "",
+    2: "\u0301",
+    3: "\u0300",
+    4: "",
+    5: "\u030C",
+    7: "\u0304",
+    8: "\u030D",
+}
+
 # ==========================================================
 # 找韻母的「索引編號」
 # ==========================================================
@@ -201,7 +211,6 @@ def convert_trandication_tiau(tiau):
     return sip_ngoo_im_trandication_tiau_dict[tiau]
 
 def get_sip_ngoo_im_un_bu(idx):
-    # return df_un_bu["sip_ngoo_im"].values.tolist()[idx]
     return df_un_bu["sip_ngoo_im"][idx]
 
 def get_sip_ngoo_im_siann_bu(idx):
@@ -248,7 +257,6 @@ TPS_tiau_dict = {
 }
 
 def get_TPS_un_bu(idx):
-    # return df_un_bu["TPS"].values.tolist()[idx]
     return df_un_bu["TPS"][idx]
 
 def get_TPS_siann_bu(idx):
@@ -282,84 +290,18 @@ def get_TPS_chu_im(siann_idx, un_idx, tiau_ho):
 oai、oan、oat、oah 標在 a 上。
 oeh 標在 e 上。
 """
-pattern1 = r"(oai|oan|oah|oeh)"
+pattern1 = r"(oai|oan|oah|oeh|ee|ei)"
 pattern2 = r"(o|e|a|u|i|ng|m)"
 
-POJ_tiau_dict = {
-    'a1': 'a',
-    'a2': 'á',
-    'a3': 'à',
-    'a4': 'a',
-    'a5': 'â',
-    'a7': 'ā',
-    'a8': 'a̍',
-    'e1': 'e',
-    'e2': 'é',
-    'e3': 'è',
-    'e4': 'e',
-    'e5': 'ê',
-    'e7': 'ē',
-    'e8': 'e̍',
-    'i1': 'i',
-    'i2': 'í',
-    'i3': 'ì',
-    'i4': 'i',
-    'i5': 'î',
-    'i7': 'ī',
-    'i8': 'i̍',
-    'o1': 'o',
-    'o2': 'ó',
-    'o3': 'ò',
-    'o4': 'o',
-    'o5': 'ô',
-    'o7': 'ō',
-    'o8': 'o̍',
-    'u1': 'u',
-    'u2': 'ú',
-    'u3': 'ù',
-    'u4': 'u',
-    'u5': 'û',
-    'u7': 'ū',
-    'u8': 'u̍',
-    'n1': 'u',
-    'n2': 'ú',
-    'n3': 'ù',
-    'n4': 'u',
-    'n5': 'û',
-    'n7': 'ū',
-    'n8': 'u̍',
-    'n1': 'u',
-    'n2': 'ú',
-    'n3': 'ù',
-    'n4': 'u',
-    'n5': 'û',
-    'n7': 'ū',
-    'u8': 'u̍',
-    'n1': 'n',
-    'n2': 'ń',
-    'n3': 'ǹ',
-    'n4': 'n',
-    'n5': 'n̂',
-    'n7': 'n̄',
-    'n8': 'n̍',
-    'm1': 'm',
-    'm2': 'ḿ',
-    'm3': 'm̀',
-    'm4': 'm',
-    'm5': 'm̌',
-    'm7': 'm̄',
-    'm8': 'm̍',
-}
+def get_POJ_tiau_hu(goan_im, tiau):
+    goan_im_with_tiau_hu = f"{goan_im}{tiau_hu_dict[int(tiau)]}"
+    return goan_im_with_tiau_hu
 
 def get_POJ_un_bu(idx):
     return df_un_bu["POJ"][idx]
 
 def get_POJ_siann_bu(idx):
     return df_siann_bu["POJ"][idx]
-
-def get_POJ_tiau_ho(goan_im, idx):
-    goan_im_idx = f"{goan_im}{idx}"
-    return POJ_tiau_dict[goan_im_idx]
 
 def get_POJ_chu_im(siann_idx, un_idx, tiau):
     un = get_POJ_un_bu(un_idx)
@@ -370,23 +312,63 @@ def get_POJ_chu_im(siann_idx, un_idx, tiau):
     # pattern1 = r"(oai|oan|oah|oeh)"
     searchObj = re.search(pattern1, POJ_chu_im, re.M | re.I)
     if searchObj:
-        goan_im = searchObj.group(1)[1]
-        POJ_chu_im = POJ_chu_im.replace(goan_im,
-                                        get_POJ_tiau_ho(goan_im, tiau))
+        found = searchObj.group(1)
+        un_chars = list(found)
+        idx = 0
+        if found == 'ee' or found == 'ei':
+            idx = 0
+        else:
+            # found = oai/oan/oah/oeh
+            idx = 1
+        goan_im = un_chars[idx]
+        un_chars[idx] = get_POJ_tiau_hu(goan_im, tiau)
+        un_str = "".join(un_chars)
+        POJ_chu_im = POJ_chu_im.replace(found, un_str)
     else:
         # pattern2 = r"(o|e|a|u|i|ng|m)"
         searchObj2 = re.search(pattern2, POJ_chu_im, re.M | re.I)
         if searchObj2:
-            goan_im = searchObj2.group(1)
-            if goan_im != "ng":
-                POJ_chu_im = POJ_chu_im.replace(goan_im,
-                                                get_POJ_tiau_ho(goan_im, tiau))
-            else:
-                POJ_chu_im = POJ_chu_im.replace("n",
-                                                get_POJ_tiau_ho(goan_im, tiau))
+            found = searchObj2.group(1)
+            goan_im = found
+            new_un = get_POJ_tiau_hu(goan_im, tiau)
+            POJ_chu_im = POJ_chu_im.replace(found, new_un)
 
     return POJ_chu_im
 
+
+# %%
+"""
+白話字測試案例
+"""
+# han_ji_dict = {
+#     "竄": "chhoan3",
+#     "鏢": "pio1",
+#     "語": "gi2",
+#     "欠": "khiam3",
+#     "德": "tek4",
+#     "元": "goan5",
+#     "字": "ji7",
+#     "俗": "siok8",
+#     "聲": "siann1",
+#     "生": "chhinn1",
+#     "嘉": "kee1",
+#     "下": "hee7",
+#     "麗": "lei7",
+# }
+
+# for han_ji in han_ji_dict:
+#     chu_im = han_ji_dict[han_ji]
+#     result = split_chu_im(chu_im)
+
+#     siann_bu = result[0]    # siann
+#     un_bu = result[1]    # un
+#     tiau_ho = result[2]   # tiau
+
+#     siann_idx = get_siann_idx(siann_bu)
+#     un_idx = get_un_idx(un_bu)
+
+#     POJ_chu_im = get_POJ_chu_im(siann_idx, un_idx, tiau_ho)
+#     print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 白話字拼音：{POJ_chu_im}")
 
 # %%
 """
@@ -414,8 +396,6 @@ BP_tiau_remap_dict = {
     8: 8,  # 陽入：4?
 }
 
-pattern = r"[a|oo|ere|(iu|ui)|(e|o)|(i|u)|ng|m]"
-
 BP_tiau_hu_dict = {
     1: "\u0304",    # 陰平
     2: "\u0341",    # 陽平
@@ -424,58 +404,6 @@ BP_tiau_hu_dict = {
     6: "\u0302",    # 陽去
     7: "\u0304",    # 陰入
     8: "\u0341",    # 陽入
-}
-
-BP_tiau_dict = {
-    'a1': 'ā',
-    'a2': 'á',
-    'a3': 'ǎ',
-    'a5': 'à',
-    'a6': 'â',
-    'a7': 'ā',
-    'a8': 'á',
-    'e1': 'ē',
-    'e2': 'é',
-    'e3': 'ě',
-    'e5': 'è',
-    'e6': 'ê',
-    'e7': 'ē',
-    'e8': 'é',
-    'i1': 'ī',
-    'i2': 'í',
-    'i3': 'ǐ',
-    'i5': 'ì',
-    'i6': 'î',
-    'i7': 'ī',
-    'i8': 'í',
-    'o1': 'ō',
-    'o2': 'ó',
-    'o3': 'ǒ',
-    'o5': 'ò',
-    'o6': 'ô',
-    'o7': 'ō',
-    'o8': 'ó',
-    'u1': 'ū',
-    'u2': 'ú',
-    'u3': 'ǔ',
-    'u5': 'ù',
-    'u6': 'û',
-    'u7': 'ū',
-    'u8': 'ú',
-    'n1': 'n̄',
-    'n2': 'ń',
-    'n3': 'ň',
-    'n5': 'ǹ',
-    'n6': 'n̂',
-    'n7': 'n̄',
-    'n8': 'ń',
-    'm1': 'm̄',
-    'm2': 'ḿ',
-    'm3': 'm̌',
-    'm5': 'm̀',
-    'm6': 'm̂',
-    'm7': 'm̄',
-    'm8': 'ḿ',
 }
 
 def get_BP_un_bu(idx):
@@ -488,8 +416,8 @@ def get_BP_tiau_remap(tiau_ho):
     return BP_tiau_remap_dict[int(tiau_ho)]
 
 def get_BP_tiau_hu(goan_im, BP_tiau):
-    goan_im_idx = f"{goan_im}{BP_tiau}"
-    return BP_tiau_dict[goan_im_idx]
+    goan_im_with_tiau_hu = f"{goan_im}{BP_tiau_hu_dict[int(BP_tiau)]}"
+    return goan_im_with_tiau_hu
 
 def get_BP_chu_im_simple(siann_idx, un_idx, tiau):
     un = get_BP_un_bu(un_idx)
@@ -501,6 +429,9 @@ def get_BP_chu_im_simple(siann_idx, un_idx, tiau):
 
     return BP_chu_im
 
+
+pattern = r"(a|oo|ere|iu|ui|ng|e|o|i|u|m)"
+
 def get_BP_chu_im(siann_idx, un_idx, tiau):
     un = get_BP_un_bu(un_idx)
     siann = get_BP_siann_bu(siann_idx)
@@ -509,31 +440,61 @@ def get_BP_chu_im(siann_idx, un_idx, tiau):
 
     BP_chu_im = f"{siann}{un}"
 
-    # pattern = r"[a|oo|ere|(iu|ui)|(e|o)|(i|u)|ng|m]"
     searchObj = re.search(pattern, BP_chu_im, re.M | re.I)
     if searchObj:
         found = searchObj.group(1)
-        if found == "iu":
-            BP_chu_im = BP_chu_im.replace("u", get_BP_tiau_hu(found, BP_tiau))
-        elif found == "ui":
-            BP_chu_im = BP_chu_im.replace("i", get_BP_tiau_hu(found, BP_tiau))
-        elif found == "oo":
-            tiau_hu = get_BP_tiau_hu("o", BP_tiau)
-            to_be_replaced = f"o{tiau_hu}"
-            BP_chu_im = BP_chu_im.replace(found, to_be_replaced)
+        un_chars = list(found)
+        idx = 0
+        if found == "iu" or found == "ui":
+            idx = 1
+        elif found == "oo" or found == "ng":
+            idx = 0
         elif found == "ere":
-            tiau_hu = get_BP_tiau_hu("e", BP_tiau)
-            to_be_replaced = f"er{tiau_hu}"
-            BP_chu_im = BP_chu_im.replace(found, to_be_replaced)
-        elif found == "ng":
-            tiau_hu = get_BP_tiau_hu("n", BP_tiau)
-            to_be_replaced = f"{tiau_hu}g"
-            BP_chu_im = BP_chu_im.replace(found, to_be_replaced)
-        else:
-            BP_chu_im = BP_chu_im.replace(found, get_BP_tiau_hu(found, BP_tiau))
+            idx = 2
+
+        goan_im = un_chars[idx]
+        un_chars[idx] = get_BP_tiau_hu(goan_im, BP_tiau)
+        un_str = "".join(un_chars)
+        BP_chu_im = BP_chu_im.replace(found, un_str)
 
     return BP_chu_im
 
+
+# %%
+"""
+閩拼測試案例
+"""
+han_ji_dict = {
+    "狐": "hoo5",
+    "虺": "qui2",
+    "有": "qiu2",
+    "鏢": "pio1",
+    "語": "gi2",
+    "臺": "tai5",
+    "野": "qia2",
+    "欠": "khiam3",
+    "德": "tek4",
+    "元": "goan5",
+    "字": "ji7",
+    "俗": "siok8",
+    "聲": "siann1",
+    "生": "chhinn1"
+}
+
+for han_ji in han_ji_dict:
+    chu_im = han_ji_dict[han_ji]
+    result = split_chu_im(chu_im)
+
+    siann_bu = result[0]    # siann
+    un_bu = result[1]    # un
+    tiau_ho = result[2]   # tiau
+
+    siann_idx = get_siann_idx(siann_bu)
+    un_idx = get_un_idx(un_bu)
+
+    # BP_chu_im = get_BP_chu_im_simple(siann_idx, un_idx, tiau_ho)
+    BP_chu_im = get_BP_chu_im(siann_idx, un_idx, tiau_ho)
+    print(f"漢字：{han_ji} ==> 注音碼：{chu_im} ==> 閩拼：{BP_chu_im}")
 
 # %%
 """
@@ -542,81 +503,15 @@ def get_BP_chu_im(siann_idx, un_idx, tiau):
 """
 pattern = r"(o|e|a|u|i|ng|m)"
 
-TL_tiau_dict = {
-    'a1': 'a',
-    'a2': 'á',
-    'a3': 'à',
-    'a4': 'a',
-    'a5': 'â',
-    'a7': 'ā',
-    'a8': 'a̍',
-    'e1': 'e',
-    'e2': 'é',
-    'e3': 'è',
-    'e4': 'e',
-    'e5': 'ê',
-    'e7': 'ē',
-    'e8': 'e̍',
-    'i1': 'i',
-    'i2': 'í',
-    'i3': 'ì',
-    'i4': 'i',
-    'i5': 'î',
-    'i7': 'ī',
-    'i8': 'i̍',
-    'o1': 'o',
-    'o2': 'ó',
-    'o3': 'ò',
-    'o4': 'o',
-    'o5': 'ô',
-    'o7': 'ō',
-    'o8': 'o̍',
-    'u1': 'u',
-    'u2': 'ú',
-    'u3': 'ù',
-    'u4': 'u',
-    'u5': 'û',
-    'u7': 'ū',
-    'u8': 'u̍',
-    'n1': 'u',
-    'n2': 'ú',
-    'n3': 'ù',
-    'n4': 'u',
-    'n5': 'û',
-    'n7': 'ū',
-    'n8': 'u̍',
-    'n1': 'u',
-    'n2': 'ú',
-    'n3': 'ù',
-    'n4': 'u',
-    'n5': 'û',
-    'n7': 'ū',
-    'u8': 'u̍',
-    'n1': 'n',
-    'n2': 'ń',
-    'n3': 'ǹ',
-    'n4': 'n',
-    'n5': 'n̂',
-    'n7': 'n̄',
-    'n8': 'n̍',
-    'm1': 'm',
-    'm2': 'ḿ',
-    'm3': 'm̀',
-    'm4': 'm',
-    'm5': 'm̌',
-    'm7': 'm̄',
-    'm8': 'm̍',
-}
+def get_TL_tiau_hu(goan_im, tiau):
+    goan_im_with_tiau_hu = f"{goan_im}{tiau_hu_dict[int(tiau)]}"
+    return goan_im_with_tiau_hu
 
 def get_TL_un_bu(idx):
     return df_un_bu["TL"][idx]
 
 def get_TL_siann_bu(idx):
     return df_siann_bu["TL"][idx]
-
-def get_TL_tiau_ho(goan_im, idx):
-    goan_im_idx = f"{goan_im}{idx}"
-    return TL_tiau_dict[goan_im_idx]
 
 def get_TL_chu_im(siann_idx, un_idx, tiau):
     un = get_TL_un_bu(un_idx)
@@ -627,11 +522,9 @@ def get_TL_chu_im(siann_idx, un_idx, tiau):
     # pattern = r"(o|e|a|u|i|ng|m)"
     searchObj = re.search(pattern, TL_chu_im, re.M | re.I)
     if searchObj:
-        goan_im = searchObj.group(1)
-        if goan_im != "ng":
-            TL_chu_im = TL_chu_im.replace(goan_im,
-                                          get_TL_tiau_ho(goan_im, tiau))
-        else:
-            TL_chu_im = TL_chu_im.replace("n",
-                                          get_TL_tiau_ho(goan_im, tiau))
+        found = searchObj.group(1)
+        goan_im = found
+        new_un = get_TL_tiau_hu(goan_im, tiau)
+        TL_chu_im = TL_chu_im.replace(found, new_un)
+
     return TL_chu_im
