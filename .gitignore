@@ -1,18 +1,24 @@
-$HOME/.config/coc/extensions/
 ###################
-.DS_Store
-.hg
-.svn
-.idea
-.vscode
-*.vscode
-node_modules
-.git/
+# Files: Exclude
+###################
+$HOME/.config/coc/extensions/
+**/.git
+**/.svn
+**/.hg
+**/.DS_Store
+**/Thumbs.db
+**/.idea
+**/.vscode
+###################
+# Search: Exclude
+###################
+**/node_modules
+**/bower_components
 ###################
 # Python files
-.venv/
-env/
-__pycache__/
+**/.venv/
+**/env/
+**/__pycache__/
 .pyc
 static_collected/
 # Temporary files
