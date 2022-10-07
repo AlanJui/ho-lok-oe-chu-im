@@ -10,6 +10,7 @@ numpy = "*"
 psycopg = "*"
 psycopg2-binary = "*"
 import-ipynb = "*"
+ipynb = "*"
 
 [dev-packages]
 
