@@ -40,74 +40,105 @@ engine:
     - punct_segmentor
     - fallback_segmentor
   translators:
+    - echo_translator
     - punct_translator
-    - script_translator
+    - r10n_translator
     - reverse_lookup_translator
+    #====================================
+    # - punct_translator
+    # - script_translator
+    # - reverse_lookup_translator
   filters:
     - simplifier
     - uniquifier
-  
+
 speller:
-  alphabet: zyxwvutsrqponmlkjihgfedcbaBGE
+  alphabet: 'zyxwvutsrqponmlkjihgfedcba~[/\]90-;'
+  initials: zyxwvutsrqponmlkjihgfedcba
   delimiter: " '"
   algebra:
-    #   去掉聲調
-    - derive/[1-8]//
+    - abbrev/^([ptkbgmlschj]h?).+$/$1/
     #   零聲母處理
     - derive/q//
-    #   通配
-    #- derive/c/ts/
-    - derive/ou/oo/
-    #- derive/e(ng|k)/i$1/
-    #- derive/ei/e/
     #====================================
+    - derive/ou/oo/
     - derive/e(e|i)/e/
     - derive/tsh/chh/
+    - derive/ts/ch/
     - derive/i(ng|k)/e$1/
     #====================================
-    #   鼻化韻處理
-    #- derive/([^u])enn/$1eenn/
-    #- xform/b(.+)nn/m$1/
-    #- xform/l(.+)nn/n$1/
-    #- xform/g(.+)nn/ng$1/
-    #- derive/([^blg])(.+)nn/$1$2/
+    #   方音腔調
+    # - derive/ei/e/
+    # - derive/ee/e/
+    # - derive/ere/e/
+    # - derive/ir/u/
+    # - derive/ir/i/
     #====================================
-    - derive/([^u])enn/oenn/
-    #====================================
-    #   類閩拼轉換
-    #- xform/^j/r/
-    # - derive/j/r/
-    # - xform/^b/bb/
-    # - xform/^g/gg/
-    # - xform/^p(?!h)/b/
-    # - xform/^t(?!h)/d/
-    # - xform/^k(?!h)/g/
-    # - xform/^c(?!h)/z/
-    # - xform/^([ptkc])(h)/$1/
-    # - derive/au/ao/
-    #   簡碼
-    # - derive/ng/f/
-    # - derive/gg/G/
-    # - derive/bb/B/
-    # - derive/ee/E/
-    #   聲母簡拼
-    #- abbrev/^([lbgkdptzrjsqchmn])([^bg]).+$/$1/
-    #- abbrev/^([lpktcjsqbghBGmn])([^hsg]).+$/$1/
-    #- abbrev/^(ph).+$/$1/
-    #- abbrev/^(th).+$/$1/
-    #- abbrev/^(kh).+$/$1/
-    #- abbrev/^(ng).+$/$1/
-    #- abbrev/^(bb).+$/$1/
-    #- abbrev/^(gg).+$/$1/
-    #- abbrev/^(ch).+$/$1/
-    #- abbrev/^(ts).+$/$1/
-    #- abbrev/^(tsh).+$/$1/
-    
+    - derive/^([a-z]+)\d$/$1/
+    - 'xlit 12345678 [/\]90-;'
+
 translator:
   dictionary: ho_lok_oe
   spelling_hints: 5
   preedit_format:
-  comment_format: 
+    - 'xform ([aeiou])(r?m?n*h?g?p?t?k?)([\[/\\\]90\-;]) $1$3$2'
+    - 'xform ([aeo])([iueo])([\[/\\\]90\-;]) $1$3$2'
+    - 'xform a\[ a'
+    - 'xform e\[ e'
+    - 'xform i\[ i'
+    - 'xform u\[ u'
+    - 'xform o\[ o'
+    - 'xform m\[ m'
+    - 'xform ng\[ ng'
+    - 'xform a/ á'
+    - 'xform e/ é'
+    - 'xform i/ í'
+    - 'xform u/ ú'
+    - 'xform o/ ó'
+    - 'xform m/ ḿ'
+    - 'xform ng/ ńg'
+    - 'xform a\\ à'
+    - 'xform e\\ è'
+    - 'xform i\\ ì'
+    - 'xform u\\ ù'
+    - 'xform o\\ ò'
+    - 'xform ng\\ ǹg'
+    - 'xform a\] a'
+    - 'xform e\] e'
+    - 'xform i\] i'
+    - 'xform u\] u'
+    - 'xform o\] o'
+    - 'xform mh\] mh'
+    - 'xform ngh\] ngh'
+    - 'xform a9 â'
+    - 'xform e9 ê'
+    - 'xform i9 î'
+    - 'xform u9 û'
+    - 'xform o9 ô'
+    - 'xform m9 m̂'
+    - 'xform ng9 n̂g'
+    - 'xform a0 ǎ'
+    - 'xform e0 ě'
+    - 'xform i0 ǐ'
+    - 'xform u0 ǔ'
+    - 'xform o0 ǒ'
+    - 'xform ng0 ňg'
+    - 'xform a- ā'
+    - 'xform e- ē'
+    - 'xform i- ī'
+    - 'xform u- ū'
+    - 'xform o- ō'
+    - 'xform m- m̄'
+    - 'xform ng- n̄g'
+    - 'xform a; a̍'
+    - 'xform e; e̍'
+    - 'xform i; i̍'
+    - 'xform u; u̍'
+    - 'xform o; o̍'
+    - 'xform mh; m̍h'
+    - 'xform ngh; n̍gh'
+
+  comment_format:
     - xform/^([a-z]+\d)$/$1;$1/
     - xform/;l/\[柳;/
     - xform/;p(?!h)/\[邊;/
@@ -167,13 +198,6 @@ translator:
     - xform/;aunn/爻;/
     - xform/;onn(h?)/扛;/
     - xform/;iunn/牛;/
-    # - xform/;1/上平\]/
-    # - xform/;2/上上\]/
-    # - xform/;3/上去\]/
-    # - xform/;4/上入\]/
-    # - xform/;5/下平\]/
-    # - xform/;7/下去\]/
-    # - xform/;8/下入\]/
     #=============================================
     - xform/;1/一\]/
     - xform/;2/二\]/
@@ -185,54 +209,6 @@ translator:
     #=============================================
     #   以下爲羅馬字轉寫
     - xform/q//
-    #- xform/c/ts/
-    #   「更」韻
-    #- xform/([^u])enn/$1eenn/
-    #   「文」「柳」「語」鼻化韻
-    # - xform/b([aeiou]+)nn/m$1/
-    # - xform/l([aeiou]+)nn/n$1/
-    # - xform/g([aeiou]+)nn/ng$1/
-    #   標調
-    - xform/([aeiou])(m?n*h?g?p?t?k?)([1234578])/$1$3$2/
-    - xform/([aeo])([iueo])([1234578])/$1$3$2/
-    - 'xform a1 a'
-    - 'xform e1 e'
-    - 'xform i1 i'
-    - 'xform u1 u'
-    - 'xform o1 o'
-    - 'xform a2 á'
-    - 'xform e2 é'
-    - 'xform i2 í'
-    - 'xform u2 ú'
-    - 'xform o2 ó'
-    - 'xform a3 à'
-    - 'xform e3 è'
-    - 'xform i3 ì'
-    - 'xform u3 ù'
-    - 'xform o3 ò'
-    - 'xform a4 a'
-    - 'xform e4 e'
-    - 'xform i4 i'
-    - 'xform u4 u'
-    - 'xform o4 o'
-    - 'xform a5 â'
-    - 'xform e5 ê'
-    - 'xform i5 î'
-    - 'xform u5 û'
-    - 'xform o5 ô'
-    - 'xform a7 ā'
-    - 'xform e7 ē'
-    - 'xform i7 ī'
-    - 'xform u7 ū'
-    - 'xform o7 ō'
-    - 'xform a8 a̍'
-    - 'xform e8 e̍'
-    - 'xform i8 i̍'
-    - 'xform u8 u̍'
-    - 'xform o8 o̍'
-    #   鼻化符號顯示成上標
-    - xform/nn(h?)(\d|\>)/ⁿ$1$2/
-
 
 reverse_lookup:
   dictionary: luna_pinyin
@@ -243,7 +219,7 @@ reverse_lookup:
     - xform/([nl])v/$1ü/
     - xform/([nl])ue/$1üe/
     - xform/([jqxy])v/$1u/
-  comment_format: 
+  comment_format:
     - xform/([a-z]+\d)/$1;$1/
     - xform/;l/\[柳;/
     - xform/;p(?!h)/\[邊;/
@@ -256,7 +232,7 @@ reverse_lookup:
     - xform/;j/\[入;/
     - xform/;s/\[時;/
     - xform/;q/\[英;/
-    - xform/;b/\[文;/
+    - xform/;b/\[門;/
     - xform/;g/\[語;/
     - xform/;ch/\[出;/
     - xform/;h/\[喜;/
@@ -267,10 +243,10 @@ reverse_lookup:
     - xform/;ee(h?)/嘉;/
     - xform/;a(n|t)(\d)/干;$2/
     - xform/;o(ng|k)/公;/
-    - xform/;uai(h?)/乖;$2/
+    - xform/;oai(h?)/乖;$2/
     - xform/;e(ng|k)/經;/
-    - xform/;ua(n|t)(\d)/觀;$2/
-    - xform/;ou(h?)(\d)/沽;$2/
+    - xform/;oa(n|t)(\d)/觀;$2/
+    - xform/;oo(h?)(\d)/沽;$2/
     - xform/;iau(h?)(\d)/嬌;$2/
     - xform/;ei/稽;/
     - xform/;io(ng|k)/恭;/
@@ -279,12 +255,12 @@ reverse_lookup:
     - xform/;i(n|t)(\d)/巾;$2/
     - xform/;ia(ng|k)/姜;/
     - xform/;a(m|p)/甘;/
-    - xform/;ua(h?)(\d)/瓜;$2/
+    - xform/;oa(h?)(\d)/瓜;$2/
     - xform/;a(ng|k)/江;/
     - xform/;ia(m|p)/兼;/
     - xform/;au(h?)(\d)/交;$2/
     - xform/;ia(h?)(\d)/迦;$2/
-    - xform/;ue(h?)(\d)/檜;$2/
+    - xform/;oe(h?)(\d)/檜;$2/
     - xform/;ann(h?)/監;/
     - xform/;u(h?)(\d)/艍;$2/
     - xform/;a(h?)(\d)/膠;$2/
@@ -296,8 +272,8 @@ reverse_lookup:
     - xform/;uann/官;/
     - xform/;e(h?)(\d)/伽;$2/
     - xform/;ainn(h?)/閒;/
-    - xform/;ounn/姑;/
-    - xform/;uenn/糜;/
+    - xform/;oonn/姑;/
+    - xform/;oenn/糜;/
     - xform/;iaunn(h?)/嘄;/
     - xform/;o(m|p)/箴;/
     - xform/;aunn/爻;/
@@ -361,13 +337,27 @@ reverse_lookup:
     - xform/nn(h?)(\d|\>)/ⁿ$1$2/
 
 punctuator:
-  import_preset: symbols
+  import_preset: default
 
 key_binder:
   import_preset: default
+  bindings:
+    - { when: has_menu, accept: minus, send: minus }  # 第7調
+    - { when: paging, accept: minus, send: Page_Up }
 
 recognizer:
   import_preset: default
   patterns:
-    punct: '^/([0-9]0?|[A-Za-z]+)$'
-    reverse_lookup: "`[a-z]*'?$"
+    reverse_lookup: "`[a-z]*$"
+
+# punctuator:
+#   import_preset: symbols
+
+# key_binder:
+#   import_preset: default
+
+# recognizer:
+#   import_preset: default
+#   patterns:
+#     punct: '^/([0-9]0?|[A-Za-z]+)$'
+#     reverse_lookup: "`[a-z]*'?$"

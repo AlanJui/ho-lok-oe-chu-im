@@ -7,7 +7,7 @@ version: "1"
 sort: by_weight
 use_preset_vocabulary: true
 import_tables:
-  - nga_siok_thong_sip_ngoo_im
+  # - peh_oe_ji
 ...
 𪑖	pun1	
 𪒰	pun1	1%
@@ -10646,4 +10646,6 @@ import_tables:
 𢝌	bonn7	
 芼	bonn7	
 牛	giunn5	
-䒜	giunn5
+䒜	giunn5	
+愁	chhiu5	1%
+
