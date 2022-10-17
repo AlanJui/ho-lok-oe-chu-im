@@ -62,10 +62,13 @@ speller:
     - derive/q//
     #====================================
     - derive/ou/oo/
-    - derive/e(e|i)/e/
-    - derive/tsh/chh/
-    - derive/ts/ch/
-    - derive/i(ng|k)/e$1/
+    # - derive/e(e|i)/e/
+    # - derive/chh/tsh/
+    # - derive/ch/ts/
+    # - derive/e(ng|k)/i$1/
+    # - derive/tsh/chh/
+    # - derive/ts/ch/
+    # - derive/i(ng|k)/e$1/
     #====================================
     #   方音腔調
     # - derive/ei/e/
