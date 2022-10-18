@@ -65,20 +65,20 @@ speller:
     - derive/e(ng|k)/i$1/
     - derive/ei/e/
     #   鼻化韻處理
-    - derive/([^u])enn/$1eenn/
-    - xform/b(.+)nn/m$1/
-    - xform/l(.+)nn/n$1/
-    - xform/g(.+)nn/ng$1/
-    - derive/([^blg])(.+)nn/$1$2/
+    # - derive/([^u])enn/$1eenn/
+    # - xform/b(.+)nn/m$1/
+    # - xform/l(.+)nn/n$1/
+    # - xform/g(.+)nn/ng$1/
+    # - derive/([^blg])(.+)nn/$1$2/
     #   聲母簡拼
-    - abbrev/^([lpktcjsqbghmn])([^hsg]).+$/$1/
-    - abbrev/^(ph).+$/$1/
-    - abbrev/^(th).+$/$1/
-    - abbrev/^(kh).+$/$1/
-    - abbrev/^(ng).+$/$1/
-    - abbrev/^(ch).+$/$1/
-    - abbrev/^(ts).+$/$1/
-    - abbrev/^(tsh).+$/$1/
+    # - abbrev/^([lpktcjsqbghmn])([^hsg]).+$/$1/
+    # - abbrev/^(ph).+$/$1/
+    # - abbrev/^(th).+$/$1/
+    # - abbrev/^(kh).+$/$1/
+    # - abbrev/^(ng).+$/$1/
+    # - abbrev/^(ch).+$/$1/
+    # - abbrev/^(ts).+$/$1/
+    # - abbrev/^(tsh).+$/$1/
     #===========================================
     - derive/^([a-z]+)\d$/$1/
     - abbrev/^([ptkmnbglsjhiuc]g?s?h?h?).*/$1/
@@ -144,23 +144,25 @@ translator:
     - 'xform o; o̍'
     - 'xform mh; m̍h'
     - 'xform ngh; n̍gh'
+    #   鼻化符號顯示成上標
+    - xform/nn(h?)(\d|\>)/ⁿ$1$2/
 
   comment_format:
     - xform/^([a-z]+\d)$/$1;$1/
     - xform/;l/\[柳;/
     - xform/;p(?!h)/\[邊;/
     - xform/;k(?!h)/\[求;/
-    - xform/;kh/\[去;/
+    - xform/;kh/\[氣;/
     - xform/;t(?!h)/\[地;/
     - xform/;ph/\[頗;/
     - xform/;th/\[他;/
-    - xform/;ch(?!h)/\[曾;/
+    - xform/;ts(?!h)/\[曾;/
     - xform/;j/\[入;/
     - xform/;s/\[時;/
     - xform/;q/\[英;/
-    - xform/;b/\[門;/
+    - xform/;b/\[文;/
     - xform/;g/\[語;/
-    - xform/;chh/\[出;/
+    - xform/;tsh/\[出;/
     - xform/;h/\[喜;/
     - xform/;u(n|t)(\d)/君;$2/
     - xform/;ia(n|t)(\d)/堅;$2/
@@ -169,10 +171,10 @@ translator:
     - xform/;ee(h?)/嘉;/
     - xform/;a(n|t)(\d)/干;$2/
     - xform/;o(ng|k)/公;/
-    - xform/;oai(h?)/乖;$2/
-    - xform/;e(ng|k)/經;/
-    - xform/;oa(n|t)(\d)/觀;$2/
-    - xform/;oo(h?)(\d)/沽;$2/
+    - xform/;uai(h?)/乖;$2/
+    - xform/;i(ng|k)/經;/
+    - xform/;ua(n|t)(\d)/觀;$2/
+    - xform/;ou(h?)(\d)/沽;$2/
     - xform/;iau(h?)(\d)/嬌;$2/
     - xform/;ei/稽;/
     - xform/;io(ng|k)/恭;/
@@ -181,12 +183,12 @@ translator:
     - xform/;i(n|t)(\d)/巾;$2/
     - xform/;ia(ng|k)/姜;/
     - xform/;a(m|p)/甘;/
-    - xform/;oa(h?)(\d)/瓜;$2/
+    - xform/;ua(h?)(\d)/瓜;$2/
     - xform/;a(ng|k)/江;/
     - xform/;ia(m|p)/兼;/
     - xform/;au(h?)(\d)/交;$2/
     - xform/;ia(h?)(\d)/迦;$2/
-    - xform/;oe(h?)(\d)/檜;$2/
+    - xform/;ue(h?)(\d)/檜;$2/
     - xform/;ann(h?)/監;/
     - xform/;u(h?)(\d)/艍;$2/
     - xform/;a(h?)(\d)/膠;$2/
@@ -195,17 +197,24 @@ translator:
     - xform/;enn(h?)/更;/
     - xform/;inn(h?)/梔;/
     - xform/;iann/驚;/
-    - xform/;oann/官;/
+    - xform/;uann/官;/
     - xform/;e(h?)(\d)/伽;$2/
     - xform/;ainn(h?)/閒;/
-    - xform/;onn/姑;/
-    - xform/;oenn/糜;/
+    - xform/;oonn/姑;/
+    - xform/;uenn/糜;/
     - xform/;iaunn(h?)/嘄;/
     - xform/;o(m|p)/箴;/
     - xform/;aunn/爻;/
     - xform/;onn(h?)/扛;/
     - xform/;iunn/牛;/
     #=============================================
+    # - xform/;1/上平\]/
+    # - xform/;2/上上\]/
+    # - xform/;3/上去\]/
+    # - xform/;4/上入\]/
+    # - xform/;5/下平\]/
+    # - xform/;7/下去\]/
+    # - xform/;8/下入\]/
     - xform/;1/一\]/
     - xform/;2/二\]/
     - xform/;3/三\]/
@@ -216,6 +225,15 @@ translator:
     #=============================================
     #   以下爲羅馬字轉寫
     - xform/q//
+    # - xform/c/ts/
+    #   「更」韻
+    - xform/([^u])enn/$1eenn/
+    #   「文」「柳」「語」鼻化韻
+    - xform/b([aeiou]+)nn/m$1/
+    - xform/l([aeiou]+)nn/n$1/
+    - xform/g([aeiou]+)nn/ng$1/
+    #   標調
+    #=============================================
 
 reverse_lookup:
   dictionary: luna_pinyin
