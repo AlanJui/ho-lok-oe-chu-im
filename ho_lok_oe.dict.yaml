@@ -731,7 +731,7 @@ import_tables:
 婣	qian1	
 闉	qian1	
 甄	qian1	
-千	tsian1	
+千	tshian1	
 仟	tsian1	
 芊	tsian1	
 阡	tsian1	
@@ -3780,6 +3780,7 @@ import_tables:
 謄	thing5	
 情	tshing5	
 晴	tshing5	
+晴	tsing5	
 暒	tshing5	
 層	tshing5	
 嶒	tshing5	
@@ -6304,7 +6305,7 @@ import_tables:
 母	bo2	
 厄	go2	
 𡜮	go2	
-草	tso2	
+草	tsho2	
 艸	tso2	1%
 懆	tso2	
 騲	tso2	
@@ -9503,6 +9504,8 @@ import_tables:
 偨	tsi2	
 杵	tsi2	
 處	tsi2	
+處	tshu2	
+處	tshu3	
 䖏	tsi2	1%
 処	tsi2	1%
 齒	tsi2	
