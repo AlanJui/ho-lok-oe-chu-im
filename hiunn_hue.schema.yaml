@@ -1,15 +1,14 @@
-
 # Rime schema
 # vim: set sw=2 sts=2 et:
 # encoding: utf-8
 
 schema:
-  schema_id: ho_lok_oe
-  name: 河洛話注音
+  schema_id: hiunn_hue
+  name: 香火
   version: "0.1"
   author: 
     - 居正中 AlanJui <alanjui.1960@gmail.com>
-  description: 以《彙集雅俗通十五音》為基礎的「河洛話」注音工具
+  description: 香火萬年傳，切莫使斷絕
   dependencies:
     - luna_pinyin
 
@@ -28,22 +27,22 @@ engine:
   processors:
     - ascii_composer
     - recognizer
-    - key_binder      # 將按鍵所產生的某一字碼，綁定為某 Rime 指令
-    - speller         # 自鍵盤獲取使用者輸入之字碼
-    - punctuator      # 允許使用者輸入標點符號
-    - selector        # 使用者可自提示選單：選字或換頁
-    - navigator       # 移動插入點游標所在位置
-    - express_editor  # 收到字碼為空白時，代表使用者已確認輸入之漢字，應予輸出至App之中
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
   segmentors:
     - ascii_segmentor
     - matcher
     - abc_segmentor
-    - punct_segmentor     # 劃界分割已輸入之字碼
-    - fallback_segmentor  
+    - punct_segmentor
+    - fallback_segmentor
   translators:
     - echo_translator
-    - punct_translator    # 轉換
-    - r10n_translator     # = script_translator ：負責將按鍵產生的字碼，切分成羅馬字音節
+    - punct_translator
+    - r10n_translator
     - reverse_lookup_translator
     #====================================
     # - punct_translator
@@ -61,10 +60,10 @@ speller:
     #   零聲母處理
     - derive/q//
     #   通配
-    # - derive/ts/c/
-    # - derive/ou/oo/
-    # - derive/e(ng|k)/i$1/
-    # - derive/ei/e/
+    - derive/c/ts/
+    - derive/ou/oo/
+    - derive/e(ng|k)/i$1/
+    - derive/ei/e/
     #   鼻化韻處理
     - derive/([^u])enn/$1eenn/
     - xform/b(.+)nn/m$1/
@@ -82,11 +81,11 @@ speller:
     - abbrev/^(tsh).+$/$1/
     #===========================================
     - derive/^([a-z]+)\d$/$1/
+    - abbrev/^([ptkmnbglsjhiuc]g?s?h?h?).*/$1/
     - 'xlit 12345678 [/\]90-;'
-    # - abbrev/^([ptkmnbglsjhiuc]g?s?h?h?).*/$1/
 
 translator:
-  dictionary: ho_lok_oe
+  dictionary: hiunn_hue
   spelling_hints: 5
   preedit_format:
     - 'xform ([aeiou])(r?m?n*h?g?p?t?k?)([\[/\\\]90\-;]) $1$3$2'
@@ -155,13 +154,14 @@ translator:
     - xform/;t(?!h)/\[地;/
     - xform/;ph/\[頗;/
     - xform/;th/\[他;/
-    - xform/;ts(?!h)/\[曾;/
+    # - xform/;ts(?!h)/\[曾;/
+    - xform/;c(?!h)/\[曾;/
     - xform/;j/\[入;/
     - xform/;s/\[時;/
     - xform/;q/\[英;/
     - xform/;b/\[門;/
     - xform/;g/\[語;/
-    - xform/;tsh/\[出;/
+    - xform/;ch/\[出;/
     - xform/;h/\[喜;/
     - xform/;u(n|t)(\d)/君;$2/
     - xform/;ia(n|t)(\d)/堅;$2/
@@ -171,9 +171,9 @@ translator:
     - xform/;a(n|t)(\d)/干;$2/
     - xform/;o(ng|k)/公;/
     - xform/;uai(h?)/乖;$2/
-    - xform/;i(ng|k)/經;/
+    - xform/;e(ng|k)/經;/
     - xform/;ua(n|t)(\d)/觀;$2/
-    - xform/;oo(h?)(\d)/沽;$2/
+    - xform/;ou(h?)(\d)/沽;$2/
     - xform/;iau(h?)(\d)/嬌;$2/
     - xform/;ei/稽;/
     - xform/;io(ng|k)/恭;/
@@ -199,7 +199,7 @@ translator:
     - xform/;uann/官;/
     - xform/;e(h?)(\d)/伽;$2/
     - xform/;ainn(h?)/閒;/
-    - xform/;onn/姑;/
+    - xform/;ounn/姑;/
     - xform/;uenn/糜;/
     - xform/;iaunn(h?)/嘄;/
     - xform/;o(m|p)/箴;/
@@ -236,7 +236,7 @@ reverse_lookup:
     - xform/;t(?!h)/\[地;/
     - xform/;ph/\[頗;/
     - xform/;th/\[他;/
-    - xform/;ts(?!h)/\[曾;/
+    - xform/;c(?!h)/\[曾;/
     - xform/;j/\[入;/
     - xform/;s/\[時;/
     - xform/;q/\[英;/
@@ -251,9 +251,9 @@ reverse_lookup:
     - xform/;ee(h?)/嘉;/
     - xform/;a(n|t)(\d)/干;$2/
     - xform/;o(ng|k)/公;/
-    - xform/;uai(h?)/乖;$2/
+    - xform/;oai(h?)/乖;$2/
     - xform/;e(ng|k)/經;/
-    - xform/;ua(n|t)(\d)/觀;$2/
+    - xform/;oa(n|t)(\d)/觀;$2/
     - xform/;oo(h?)(\d)/沽;$2/
     - xform/;iau(h?)(\d)/嬌;$2/
     - xform/;ei/稽;/
@@ -263,12 +263,12 @@ reverse_lookup:
     - xform/;i(n|t)(\d)/巾;$2/
     - xform/;ia(ng|k)/姜;/
     - xform/;a(m|p)/甘;/
-    - xform/;ua(h?)(\d)/瓜;$2/
+    - xform/;oa(h?)(\d)/瓜;$2/
     - xform/;a(ng|k)/江;/
     - xform/;ia(m|p)/兼;/
     - xform/;au(h?)(\d)/交;$2/
     - xform/;ia(h?)(\d)/迦;$2/
-    - xform/;ue(h?)(\d)/檜;$2/
+    - xform/;oe(h?)(\d)/檜;$2/
     - xform/;ann(h?)/監;/
     - xform/;u(h?)(\d)/艍;$2/
     - xform/;a(h?)(\d)/膠;$2/
@@ -281,7 +281,7 @@ reverse_lookup:
     - xform/;e(h?)(\d)/伽;$2/
     - xform/;ainn(h?)/閒;/
     - xform/;oonn/姑;/
-    - xform/;uenn/糜;/
+    - xform/;oenn/糜;/
     - xform/;iaunn(h?)/嘄;/
     - xform/;o(m|p)/箴;/
     - xform/;aunn/爻;/
