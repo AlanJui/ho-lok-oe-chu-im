@@ -350,8 +350,15 @@ punctuator:
 key_binder:
   import_preset: default
   bindings:
-    - { when: has_menu, accept: minus, send: minus }  # 第7調
-    - { when: paging, accept: minus, send: Page_Up }
+
+    # 第7調
+    - when: has_menu
+      accept: minus
+      send: minus
+
+    - when: paging
+      accept: minus
+      send: Page_Up
 
 recognizer:
   import_preset: default
