@@ -1,0 +1,18 @@
+{
+  "pythonPlatform": "Darwin",
+  "pythonVersion": "3.10",
+  "venv": "python-3.10.6",
+  "venvPath": "/Users/alanjui/.pyenv/versions",
+  "reportGeneralTypeIssues": "warning",
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "reportOptionalMemberAccess": false,
+  "reportUnusedFunction": false,
+  "reportUnusedImport": true,
+  "reportUnusedVariable": false,
+  "stubPath": "typings",
+  "typeCheckingMode": "basic",
+  "typeshedPaths": [],
+  "useLibraryCodeForTypes": true,
+  "exclude": ["**/node_modules", "**/__pycache__"]
+}
