@@ -17,7 +17,6 @@ def main_run(CONVERT_FILE_NAME):
     source_rows = source_sheet.range('A' + str(wb.sheets[0].cells.last_cell.row)).end('up').row
     print(f'source_rows = {source_rows}')
 
-    # %%
     # ==========================================================
     # 備妥程式需使用之工作表
     # ==========================================================

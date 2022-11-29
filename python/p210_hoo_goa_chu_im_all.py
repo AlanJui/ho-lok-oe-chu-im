@@ -2,8 +2,8 @@
 # coding=utf-8
 import re
 
+import modules.han_ji_chu_im as ji
 import xlwings as xw
-from modules.han_ji_chu_im import han_ji_chu_im as ji
 
 
 def main_run(CONVERT_FILE_NAME):

@@ -1,7 +1,7 @@
 # coding=utf-8
 import re
 
-import han_ji_chu_im as ji
+import modules.han_ji_chu_im as ji
 import psycopg2
 import xlwings as xw
 
@@ -46,7 +46,6 @@ def main_run(CONVERT_FILE_NAME):
     ji_khoo_sheet = wb.sheets["字庫表"]
     chu_im_sheet = wb.sheets["漢字注音表"]
 
-    # %%
     # ==========================================================
     # 資料庫
     # ==========================================================
@@ -114,56 +113,53 @@ def main_run(CONVERT_FILE_NAME):
 
             # 漢字能否查到注音碼，將有不同的處理作業
             if not query_rows:
-                """
-                問題發生：找不到漢字的注音碼
-                """
+                # 問題發生：找不到漢字的注音碼
                 print(f"Can not find 【{search_han_ji}】in Han-Ji-Khoo!!")
                 khiam_ji_sheet.range('A' + str(khiam_ji_index)).value = search_han_ji
                 khiam_ji_index += 1
                 i += 1
                 continue
-            else:
-                # 漢字查到注音；遇漢字有多種讀音，需於【字庫表】留紀錄
-                ji_soo = len(query_rows)
-                位於字庫表的列號清單 = []
-                for ji_found in range(ji_soo):
-                    # 若查到注音的漢字，有兩個以上；則需記錄漢字的 ID 編碼
-                    han_ji_id = query_rows[ji_found][0]
-                    chu_im = query_rows[ji_found][2]
-                    # ===========================================
-                    # 自【字庫】查到的【漢字】，取出：聲母、韻母、調號
-                    # ===========================================
-                    siann_bu = query_rows[ji_found][4]
-                    un_bu = query_rows[ji_found][5]
-                    tiau_ho = query_rows[ji_found][6]
 
-                    # =========================================================
-                    # 將已注音之漢字加入【漢字注音表】
-                    # =========================================================
-                    if ji_found == 0:
-                        # 處理查到的第一個漢字
-                        chu_im_sheet.range('B' + str(i)).value = chu_im
-                        chu_im_sheet.range('C' + str(i)).value = siann_bu
-                        chu_im_sheet.range('D' + str(i)).value = un_bu
-                        chu_im_sheet.range('E' + str(i)).value = tiau_ho
-                    else:
-                        # 若查到的漢字有兩個以上
-                        # ji_khoo_sheet  = wb.sheets["字庫表"]
-                        idx = ji_khoo_index
-                        ji_khoo_sheet.range('A' + str(idx)).value = search_han_ji
+            ji_soo = len(query_rows)
+            位於字庫表的列號清單 = []
+            for ji_found in range(ji_soo):
+                # 若查到注音的漢字，有兩個以上；則需記錄漢字的 ID 編碼
+                han_ji_id = query_rows[ji_found][0]
+                chu_im = query_rows[ji_found][2]
+                # ===========================================
+                # 自【字庫】查到的【漢字】，取出：聲母、韻母、調號
+                # ===========================================
+                siann_bu = query_rows[ji_found][4]
+                un_bu = query_rows[ji_found][5]
+                tiau_ho = query_rows[ji_found][6]
 
-                        ji_khoo_sheet.range('B' + str(idx)).value = chu_im
-                        ji_khoo_sheet.range('C' + str(idx)).value = siann_bu
-                        ji_khoo_sheet.range('D' + str(idx)).value = un_bu
-                        ji_khoo_sheet.range('E' + str(idx)).value = tiau_ho
+                # =========================================================
+                # 將已注音之漢字加入【漢字注音表】
+                # =========================================================
+                if ji_found == 0:
+                    # 處理查到的第一個漢字
+                    chu_im_sheet.range('B' + str(i)).value = chu_im
+                    chu_im_sheet.range('C' + str(i)).value = siann_bu
+                    chu_im_sheet.range('D' + str(i)).value = un_bu
+                    chu_im_sheet.range('E' + str(i)).value = tiau_ho
+                else:
+                    # 若查到的漢字有兩個以上
+                    # ji_khoo_sheet  = wb.sheets["字庫表"]
+                    idx = ji_khoo_index
+                    ji_khoo_sheet.range('A' + str(idx)).value = search_han_ji
 
-                        # 記錄對映【漢字注音表】的【列號（Excel Row Number）】
-                        ji_khoo_sheet.range('F' + str(idx)).value = i
-                        # 記錄【字庫】資料庫的【紀錄識別碼（Record ID of Table）】
-                        ji_khoo_sheet.range('G' + str(idx)).value = han_ji_id
+                    ji_khoo_sheet.range('B' + str(idx)).value = chu_im
+                    ji_khoo_sheet.range('C' + str(idx)).value = siann_bu
+                    ji_khoo_sheet.range('D' + str(idx)).value = un_bu
+                    ji_khoo_sheet.range('E' + str(idx)).value = tiau_ho
 
-                        位於字庫表的列號清單 += [idx]
-                        ji_khoo_index += 1
+                    # 記錄對映【漢字注音表】的【列號（Excel Row Number）】
+                    ji_khoo_sheet.range('F' + str(idx)).value = i
+                    # 記錄【字庫】資料庫的【紀錄識別碼（Record ID of Table）】
+                    ji_khoo_sheet.range('G' + str(idx)).value = han_ji_id
+
+                    位於字庫表的列號清單 += [idx]
+                    ji_khoo_index += 1
 
                 # 記錄漢字在字庫中所擁有的不同注音
                 if ji_soo > 1:
