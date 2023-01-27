@@ -1,6 +1,7 @@
 import getopt
 import sys
 
+import settings
 from p01_import_source_data import main_run as san_sing_han_ji_tsu_im_paiau
 from p100_cha_ji_tian import main_run as cha_ji_tian
 from p210_hoo_goa_chu_im_all import main_run as hoo_goa_chu_im_all
@@ -43,11 +44,17 @@ def myfunc(argv):
 
 if __name__ == "__main__":
     # 取得 Input 檔案名稱
-    opts = myfunc(sys.argv)
-    if opts['input'] != "":
-        CONVERT_FILE_NAME = opts['input']
+    file_path = settings.get_input_file_path()
+    if not file_path:
+        print("未設定 config.env 檔案")
+        # sys.exit(2)
+        opts = myfunc(sys.argv)
+        if opts['input'] != "":
+            CONVERT_FILE_NAME = opts['input']
+        else:
+            CONVERT_FILE_NAME = 'hoo-goa-chu-im.xlsx'
     else:
-        CONVERT_FILE_NAME = 'hoo-goa-chu-im.xlsx'
+        CONVERT_FILE_NAME = file_path
     print(f"CONVERT_FILE_NAME = {CONVERT_FILE_NAME}")
 
     # 將輸入之「漢字」文章，編製成「漢字注音表」，以便後續填入注音。
